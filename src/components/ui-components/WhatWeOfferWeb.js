@@ -3,8 +3,8 @@ import React from 'react'
 import HdrWeakIcon from '@mui/icons-material/HdrWeak';
 import { makeStyles } from '@mui/styles';
 
-import IndustryBg from '../../../assets/industry-solution-bg.svg'
-import IndustryAgric from '../../../assets/industry-solution-agric.png'
+import IndustryBg from '../../assets/industry-solution-bg.svg'
+import CSWeb from '../../assets/cs-desktop.png'
 
 
 
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const AgricultureIndustry = () => {
+const WhatWeOfferWeb = () => {
     const classes = useStyles();
 
     return (
@@ -70,38 +70,26 @@ const AgricultureIndustry = () => {
     <Container>
         <Box className={classes.div}  >
         <img 
-        src={IndustryAgric} 
+        src={CSWeb} 
         alt="Malin Greats Logo" 
         className={classes.img}
         />
         <Box>
-            <h2 className={classes.heading}>Agriculture</h2>
-            <h5 className={classes.body}>Modern farming requires modern solutions and this comprehensive agriculture ERP software for farmers is just that</h5>
+            <h2 className={classes.heading}>Web Based</h2>
+            <h5 className={classes.body}>We create all types of web-based software that prioritise great user experiences and provide analytics.</h5>
             <Box >
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Keep Track of Assets</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Employees</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Capture Data and Plan Ahead</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Crops and Animals</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Record Orders and Create Invoices</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Keep an Accounting Record</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Multiple Farms</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Websites</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Web Portals</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Ecommerce</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> UX/UI</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Support and Mainatenance</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Intergration</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Redesign</h6>
             </Box>
             <Button variant='contained'
-            // className={classes.button}
-            sx={{
-                marginTop: '20px',
-        fontFamily: 'Manrope',
-        fontWeight: '400',
-        fontSize: '14px',
-        lineHeight: '25px',
-        textAlign: 'center',
-        background: '#143B65',
-        color: '#FFF',
-        borderRadius: '10px',
-        width: '45%'
-            }}
+            className={classes.button}
             >
-                Sign Up
+                Work With Us
             </Button>
         </Box>
         </Box>
@@ -110,4 +98,4 @@ const AgricultureIndustry = () => {
   )
 }
 
-export default AgricultureIndustry
+export default WhatWeOfferWeb

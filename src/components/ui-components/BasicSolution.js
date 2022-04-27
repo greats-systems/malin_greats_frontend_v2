@@ -59,6 +59,7 @@ list: {
     fontSize: '20px',
     margin: '5px',
     color: '#000',
+    textAlign: 'left'
 },
 
 }))
@@ -68,8 +69,8 @@ list: {
 const BasicSolution = () => {
     const classes = useStyles();
   return (
-    <Box sx={{backgroundColor: '#143B65', marginTop: '65px', paddingBottom: '50px'}}>
-        <Container>
+    <Box sx={{backgroundColor: '#143B65', paddingTop: '85px', paddingBottom: '50px', width: '100%', height: '100%'}}>
+    
             <h3 className={classes.heading}>Basic $8*</h3>
             <h6 className={classes.text}>Simple modules to run everyday finacial aspects of ypur business. <br/>*$8 per month for 1 user</h6>
             <Grid container spacing={5}>
@@ -103,11 +104,24 @@ const BasicSolution = () => {
             </Grid>
 
             <Button variant='contained'
-            className={classes.button}
+            // className={classes.button}
+            sx={{
+            display: 'flex',
+        justifyContent: 'space-around',
+        backgroundColor: '#60FF5C',
+        borderRadius: '10px',
+        fontFamily: 'Manrope',
+        fontWeight: '400',
+        fontSize: '20px',
+        marginTop: '45px',
+        margin: 'auto',
+        lineHeight: '30px',
+        color: '#000',
+        textTransform: 'none',
+        }}
             >
                 Build Your Solution
             </Button>
-        </Container>
     </Box>
   )
 }

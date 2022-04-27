@@ -88,7 +88,19 @@ const AgricultureIndustry = () => {
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Set Up Fees Structures</h6>
             </Box>
             <Button variant='contained'
-            className={classes.button}
+            // className={classes.button}
+            sx={{
+                marginTop: '20px',
+        fontFamily: 'Manrope',
+        fontWeight: '400',
+        fontSize: '14px',
+        lineHeight: '25px',
+        textAlign: 'center',
+        background: '#143B65',
+        color: '#FFF',
+        borderRadius: '10px',
+        width: '45%'
+            }}
             >
                 Sign Up
             </Button>

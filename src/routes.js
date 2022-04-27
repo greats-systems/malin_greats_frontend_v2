@@ -8,6 +8,7 @@ import CustomDev from "./components/pages/CustomDev";
 import Erp from "./components/pages/Erp";
 import Projects from "./components/pages/Projects";
 import About from "./components/pages/About";
+import Contact from "./components/pages/Contact";
 import Error404 from "./components/pages/Error404";
 
 const routes = () => {
@@ -21,6 +22,7 @@ const routes = () => {
         <Route path="/erp" element={<Erp />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>

@@ -3,14 +3,14 @@ import React from 'react'
 import HdrWeakIcon from '@mui/icons-material/HdrWeak';
 import { makeStyles } from '@mui/styles';
 
-import IndustryBg from '../../../assets/industry-solution-bg.svg'
-import IndustryRetail from '../../../assets/industry-solution-retail.png'
+import IndustryBg from '../../assets/industry-solution-bg.svg'
+import CSMobile from '../../assets/cs-mobile.png'
 
 
 
 const useStyles = makeStyles((theme) => ({
     div: {
-        marginTop: '5px',
+        marginTop: '75px',
         display: 'flex',
         justifyContent: 'space-between',
     },
@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 
     },
     body: {
-        width: '125%',
         fontFamily: 'Manrope',
         fontStyle: 'normal',
         fontWeight: '500',
@@ -63,47 +62,35 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const AgricultureIndustry = () => {
+const WhatWeOfferMobile = () => {
     const classes = useStyles();
 
     return (
     <Box sx={{ backgroundImage: `url(${IndustryBg})`}}>
     <Container>
         <Box className={classes.div}  >
-        
+       
         <Box>
-            <h2 className={classes.heading}>Retail</h2>
-            <h5 className={classes.body}>Manage everyday transactions with ease through a retail ERP system that provides consistent flow of information in real-time. Point of Sale Real-time</h5>
+            <h2 className={classes.heading}>Mobile Based</h2>
+            <h5 className={classes.body}>We develop iOS and Android mobile applications as well as complementary web based dashboards for all industries.</h5>
             <Box >
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Point of Sale</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Real-time View of Product Availability</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Automated Stock Replenishment</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Multi-Store Retail Management</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Invoice Customers</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Billing and Pricing with notifications</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Customer Acquisition and Loyalty</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Consulting</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Native and Cross Platform Apps</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Mordern UI Design</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Web Portals</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> API Intergration</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Maintanance and Support</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Redesign</h6>
             </Box>
             <Button variant='contained'
-            // className={classes.button}
-            sx={{
-                marginTop: '20px',
-        fontFamily: 'Manrope',
-        fontWeight: '400',
-        fontSize: '14px',
-        lineHeight: '25px',
-        textAlign: 'center',
-        background: '#143B65',
-        color: '#FFF',
-        borderRadius: '10px',
-        width: '45%'
-            }}
+            className={classes.button}
             >
-                Sign Up
+                Work With Us
             </Button>
         </Box>
 
         <img 
-        src={IndustryRetail} 
+        src={CSMobile} 
         alt="Malin Greats Logo" 
         className={classes.img}
         />
@@ -113,4 +100,4 @@ const AgricultureIndustry = () => {
   )
 }
 
-export default AgricultureIndustry
+export default WhatWeOfferMobile

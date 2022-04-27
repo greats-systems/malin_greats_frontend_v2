@@ -5,7 +5,7 @@ import { Container, Box, Grid, Button } from '@mui/material';
 
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
-import ErpHeader from '../../assets/erp-header.png'
+import ContactHeader from '../../assets/contact-hero.png'
 import ErpHeaderBg from '../../assets/erp-header-bg.svg'
 
 const useStyles = makeStyles((theme) => ({
@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#FFF',
     },
     img: {
-        width: '100%',
-        top: '150px',
-        marginLeft: '75px'
+        width: '85%',
+        marginTop: '35px',
+        marginLeft: '125px'
     },
     heading1: {
         width: '145%',
@@ -96,7 +96,7 @@ CTABtn2: {
     
 }))
 
-const ErpHero = () => {
+const ContactHero = () => {
     const classes = useStyles();
     let navigate = useNavigate();
 
@@ -108,54 +108,31 @@ const ErpHero = () => {
 
             <Box >
             <h2 className={classes.heading1}>
-            Managing your business has never been easier
+            Get in touch with us to find your solution.
             </h2>
             <h5 className={classes.body}>
-            A single enterprise management solution to keep track of all your business processes. Real time management, analytical insights and 500+ custom features to choose from.
+            Provide us with your details and a member of our team will be in touch to schedule a consultation call.
             </h5>
-            <Box className={classes.buttonBox}>
-            <Button 
-            // className={classes.CTABtn} 
-            sx={{
-                        textTransform:'none',
-                        textDecoration:'none',
-                        backgroundColor: '#143B65',
-                                                            
-                        borderRadius: '45px',color: '#FFFFFF',
-                        padding: '10px 25px 10px 25px',
-                        margin: '10px 25px 10px 25px',
-                        boxShadow: '0px 67px 80px rgba(55, 52, 169, 0.07), 0px 43.4259px 46.8519px rgba(55, 52, 169, 0.0531481), 0px 25.8074px 25.4815px rgba(55, 52, 169, 0.0425185), 0px 13.4px 13px rgba(55, 52, 169, 0.035), 0px 5.45926px 6.51852px rgba(55, 52, 169, 0.0274815), 0px 1.24074px 3.14815px rgba(55, 52, 169, 0.0168519)',
-            }}
+            <Button className={classes.CTABtn} 
             variant="contained"
+            sx={{
+                textDecoration:'none',
+                backgroundColor: '#143B65',
+                                            
+                borderRadius: '45px',color: '#FFFFFF',
+                padding: '10px 25px 10px 25px',
+                margin: '10px 25px 10px 25px',
+            }}
             onClick={(()=> {navigate("/contact");})}
             >
                 Get Started
             </Button>
-            <Button 
-            // className={classes.CTABtn2} 
-            sx={{
-                textTransform:'none',
-                textDecoration:'none',
-                backgroundColor: 'transparent',
-                                                    
-                borderRadius: '45px',color: '#000',
-                padding: '10px 25px 10px 25px',
-                margin: '10px 25px 10px 25px',
-                boxShadow: '0px 67px 80px rgba(55, 52, 169, 0.07), 0px 43.4259px 46.8519px rgba(55, 52, 169, 0.0531481), 0px 25.8074px 25.4815px rgba(55, 52, 169, 0.0425185), 0px 13.4px 13px rgba(55, 52, 169, 0.035), 0px 5.45926px 6.51852px rgba(55, 52, 169, 0.0274815), 0px 1.24074px 3.14815px rgba(55, 52, 169, 0.0168519)',
-            }}
-            variant="contained"
-            onClick={(()=> {navigate("/contact");})}
-            startIcon={<PlayCircleIcon sx={{color: '#60FF5C', fontSize :'70px'}}/>}
-            >
-                How It Works
-            </Button>
-            </Box>
             </Box>
             
         </Grid>
         <Grid item xs={12} sm={12} md={8} sx={{marginTop: {xs: '5px', lg:'45px'}}}>
             <Box style={{}}>
-            <img src={ErpHeader} alt="Malin Greats Erp Hero" className={classes.img} />
+            <img src={ContactHeader} alt="Malin Greats Erp Hero" className={classes.img} />
             </Box>
         
         </Grid>
@@ -167,4 +144,4 @@ const ErpHero = () => {
   )
 }
 
-export default ErpHero
+export default ContactHero

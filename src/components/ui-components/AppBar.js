@@ -1,4 +1,5 @@
-import * as React from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,12 +17,43 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Stack from '@mui/material/Stack';
 import Logo from './Logo'
+import { makeStyles } from '@mui/styles';
+
 
 const pages = ['Products', 'Pricing', 'Blog'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
+const useStyles = makeStyles((theme) => ({
+  header: {
+      boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.05)',
+      background: 'radial-gradient(100% 9916.67% at 0.83% 0%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.15) 100%)',
+      [theme.breakpoints.down('sm')]: {
+          paddingTop: '0px'
+      }
+  },
+  navLinks: {
+      fontFamily: 'Manrope',
+                                          fontStyle: 'normal',
+                                          fontWeight: '700',
+                                          fontSize: '16px',
+                                          letterSpacing: '0.09em',
+                                          lineHeight: '19px',
+                                          textTransform:'upperCase',
+                                          textDecoration:'none',
+                                          color: '#143B65',
+                                          '&:hover': {
+                                              background: 'none',
+                                              color: '#F95C19'
+                                          },
+          
+  },
+                
+  
+
+}));
+
 const ResponsiveAppBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
   // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -39,8 +71,13 @@ const ResponsiveAppBar = () => {
   //   setAnchorElUser(null);
   // };
 
-  return (
-    <AppBar sx={{bgcolor: '#fff',}}>
+
+  let activeStyle = {
+    color: '#60FF5C'
+  };
+    const classes = useStyles();
+    return (
+    <AppBar sx={{background: 'radial-gradient(100% 9916.67% at 0.83% 0%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.15) 100%)'}}>
       <Container>
         <Toolbar disableGutters>
           <Typography
@@ -112,32 +149,52 @@ const ResponsiveAppBar = () => {
             
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: '#143B65', display: 'block', fontFamily: 'Manrope', fontWeight: '600', borderBottom: '2.3px solid #143B65'}}
+                sx={{ my: 2, color: '#143B65', display: 'block', fontFamily: 'Manrope', fontWeight: '600',}}
               >
-                HOME
+                <NavLink to="/"
+                  className={classes.navLinks}
+                  style={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                    }
+                >Home</NavLink>
               </Button>
 			<Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', fontWeight: '600' }}
-                endIcon={<KeyboardArrowDownIcon />}
+                // endIcon={<KeyboardArrowDownIcon />}
               >
-                What We Offer
+                <NavLink to="/erp"
+                  className={classes.navLinks}
+                  style={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                    }
+                >ERP</NavLink>
               </Button>
 							<Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', fontWeight: '600' }}
-                endIcon={<KeyboardArrowDownIcon />}
+                // endIcon={<KeyboardArrowDownIcon />}
               >
                 
-                Our Projects
+                <NavLink to="/customDev"
+                  className={classes.navLinks}
+                  style={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                    }
+                >Custom Dev</NavLink>
               </Button>
 							<Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block', fontWeight: '600' }}
               >
-                About Us
+               <NavLink to="/contact"
+                  className={classes.navLinks}
+                  style={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                    }
+                >Contact</NavLink>
               </Button>
-							<Button
+							{/* <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block', fontWeight: '600' }}
               >
@@ -148,7 +205,7 @@ const ResponsiveAppBar = () => {
                 sx={{ my: 2, color: 'black', display: 'block', fontWeight: '600' }}
               >
                 Contact
-              </Button>
+              </Button> */}
            
           </Box>
 
