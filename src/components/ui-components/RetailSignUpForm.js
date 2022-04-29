@@ -122,26 +122,22 @@ const onSubmit = async(e) => {
   e.preventDefault()
   setLoading(true)
     
-  alert('Submitting')
+  var formdata = new FormData();
+  formdata.append("fullName", values.name);
+  formdata.append("email", values.email);
 
-//   var formdata = new FormData();
-//   formdata.append("name", values.name);
-//   formdata.append("message", values.message);
-//   formdata.append("subject", interest);
-//   formdata.append("email", values.email);
-//   formdata.append("phone", values.phone);
+  var requestOptions = {
+    method: 'POST',
+    body: formdata,
+    redirect: 'follow'
+  };
 
-//   var requestOptions = {
-//     method: 'POST',
-//     body: formdata,
-//     redirect: 'follow'
-//   };
-
-//   const res = await fetch(`${url}/api/add-clientemail`, requestOptions)
-//   if (res.status === 200) {
-//     setLoading(false)
-//     handleClick()
-//   }
+  const res = await fetch("https://backend.malingreats.org/retail-signup", requestOptions)
+  console.log(res.status)
+    if (res.status === 200) {
+        setLoading(false)
+        // handleClick()
+      }
 }
 
 
@@ -164,7 +160,7 @@ const onSubmit = async(e) => {
               marginTop: '25px'
             }}
             >
-                <h1 className={classes.heading}>Sign Up <br/> Maliln Greats SmartFarma <br/> Retail</h1>
+                <h1 className={classes.heading}>Sign Up <br/> SmartRetail</h1>
             <div>
                 <TextField
                 name="name"
@@ -190,6 +186,7 @@ const onSubmit = async(e) => {
                 <TextField
                 name="email"
                 value={values.email}
+                onChange={handleInputChange}
                 label=" Enter Email"
                 id="standard-basic"
                 variant="standard"
@@ -205,7 +202,26 @@ const onSubmit = async(e) => {
                 margin: '10px',
                 outline: 'none'}}
                 />
-           <Button className={classes.SubmitBtn} 
+              {loading ? 
+                  <Button className={classes.SubmitBtn} 
+                  type='submit'
+                  variant="contained"
+                  disabled="true"
+                  sx={{ 
+                  width: '93%',
+                  margin: '10px',
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  lineHeight: '25px',
+                  backgroundColor: '#60FF5C',                            
+                  borderRadius: '5px',color: '#143B65',
+                  padding: '10px',
+              }}        
+                  >
+                      Loading...
+                  </Button> 
+                  :
+                  <Button className={classes.SubmitBtn} 
             type='submit'
             variant="contained" 
             sx={{ 
@@ -221,6 +237,7 @@ const onSubmit = async(e) => {
             >
                 Sign Up
             </Button> 
+                }
            {/* {loading ? 
             <Button className={classes.SubmitBtn} 
             type='submit'

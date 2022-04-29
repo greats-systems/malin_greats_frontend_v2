@@ -101,26 +101,22 @@ const onSubmit = async(e) => {
   e.preventDefault()
   setLoading(true)
 
-  alert('Submitting')
+  var formdata = new FormData();
+  formdata.append("fullName", values.name);
+  formdata.append("email", values.email);
 
-//   var formdata = new FormData();
-//   formdata.append("name", values.name);
-//   formdata.append("message", values.message);
-//   formdata.append("subject", interest);
-//   formdata.append("email", values.email);
-//   formdata.append("phone", values.phone);
+  var requestOptions = {
+    method: 'POST',
+    body: formdata,
+    redirect: 'follow'
+  };
 
-//   var requestOptions = {
-//     method: 'POST',
-//     body: formdata,
-//     redirect: 'follow'
-//   };
-
-//   const res = await fetch(`${url}/api/add-clientemail`, requestOptions)
-//   if (res.status === 200) {
-//     setLoading(false)
-//     handleClick()
-//   }
+  const res = await fetch("https://backend.malingreats.org/enquiry-email", requestOptions)
+  console.log(res.status)
+    if (res.status === 200) {
+        setLoading(false)
+        // handleClick()
+      }
 }
 
 
@@ -167,6 +163,7 @@ const onSubmit = async(e) => {
                 <TextField
                 name="email"
                 value={values.email}
+                onChange={handleInputChange}
                 label=" Enter Email"
                 id="standard-basic"
                 variant="standard"
@@ -182,21 +179,42 @@ const onSubmit = async(e) => {
                 margin: '10px',
                 outline: 'none'}}
                 />
-           <Button className={classes.SubmitBtn} 
+                {loading ? 
+                  <Button className={classes.SubmitBtn} 
+                  type='submit'
+                  variant="contained"
+                  disabled="true"
+                  sx={{ 
+                  width: '93%',
+                  margin: '10px',
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  lineHeight: '25px',
+                  backgroundColor: '#143B65',                            
+                  borderRadius: '5px',color: '#FFF',
+                  padding: '10px',
+              }}        
+                  >
+                      Loading...
+                  </Button> 
+                  :
+                  <Button className={classes.SubmitBtn} 
             type='submit'
             variant="contained" 
             sx={{ 
             width: '93%',
             margin: '10px',
             fontSize: '16px',
+            fontWeight: '500',
             lineHeight: '25px',
             backgroundColor: '#143B65',                            
-            borderRadius: '5px',color: '#FFFFFF',
+            borderRadius: '5px',color: '#FFF',
             padding: '10px',
         }}        
             >
-                GET STARTED
+                Get Started
             </Button> 
+                }
            {/* {loading ? 
             <Button className={classes.SubmitBtn} 
             type='submit'

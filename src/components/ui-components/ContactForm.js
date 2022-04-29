@@ -24,36 +24,11 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 const initialValues = {
   name: '',
+  company: '',
   email: '',
   phone: '',
   message: '',
 }
-
-const interests = [
-    {
-      value: 'foodDelivery',
-      label: 'Food Delivery',
-    },
-    {
-      value: 'intracityDelivery',
-      label: 'Intracity Delivery',
-    },
-    {
-      value: 'intercityDelivery',
-      label: 'Intercity Delivery',
-    },
-  ];
-
-  const abouts = [
-    {
-      value: 'individual',
-      label: 'Individual',
-    },
-    {
-      value: 'company',
-      label: 'Company',
-    },
-  ];
 
 
 const useStyles = makeStyles((theme) => ({
@@ -156,11 +131,11 @@ const onSubmit = async(e) => {
   setLoading(true)
 
   var formdata = new FormData();
-  formdata.append("name", values.name);
+  formdata.append("fullName", values.name);
   formdata.append("message", values.message);
-  formdata.append("subject", interest);
+  formdata.append("phoneNumber", values.phone);
   formdata.append("email", values.email);
-  formdata.append("phone", values.phone);
+  formdata.append("companyName", values.company);
 
   var requestOptions = {
     method: 'POST',
@@ -168,11 +143,15 @@ const onSubmit = async(e) => {
     redirect: 'follow'
   };
 
-  const res = await fetch(`${url}/api/add-clientemail`, requestOptions)
+  const res = await fetch('https://backend.malingreats.org/contact-email', requestOptions)
+  console.log(res)
   if (res.status === 200) {
     setLoading(false)
-    handleClick()
+    // handleClick()
   }
+
+  
+  
 }
 
 
@@ -196,8 +175,8 @@ const onSubmit = async(e) => {
             >
             <div>
             <TextField
-                name="fullName"
-                value={values.email}
+                name="name"
+                value={values.name}
                 onChange={handleInputChange}
                 label="Full Name"
                 id="outlined-size-small"
@@ -206,8 +185,8 @@ const onSubmit = async(e) => {
                 />
 
             <TextField
-                name="companyName"
-                value={values.email}
+                name="company"
+                value={values.company}
                 onChange={handleInputChange}
                 label="Company Name"
                 id="outlined-size-small"
@@ -248,22 +227,44 @@ const onSubmit = async(e) => {
                 sx={{backgroundColor: '#f0f0f0', borderRadius: '0px'}}
                 />
 
-            <Button className={classes.CTABtn} 
-            type='submit'
-            variant="contained" 
-            sx={{textTransform:'none',
-            textDecoration:'none',
-            width: '35%',
-            margin: '25px',
-            backgroundColor: '#143B65',
-            display: 'flex',
-            justifyContent: 'center',                                    
-            borderRadius: '5px',color: '#FFFFFF',
-            padding: '10px', 
-        marginLeft: {xs: '95px', sm: '95px', md: '300px'}}}        
-                >
-                Submit
-            </Button> 
+                {loading ? 
+                <Button className={classes.CTABtn} 
+                disabled="true"
+                type='submit'
+                variant="contained" 
+                sx={{textTransform:'none',
+                textDecoration:'none',
+                width: '35%',
+                margin: '25px',
+                backgroundColor: '#143B65',
+                display: 'flex',
+                justifyContent: 'center',                                    
+                borderRadius: '5px',color: '#FFFFFF',
+                padding: '10px', 
+            marginLeft: {xs: '95px', sm: '95px', md: '300px'}}}        
+                    >
+                    Loading....
+                </Button> 
+                :
+                <Button className={classes.CTABtn} 
+                type='submit'
+                variant="contained" 
+                sx={{textTransform:'none',
+                textDecoration:'none',
+                width: '35%',
+                margin: '25px',
+                backgroundColor: '#143B65',
+                display: 'flex',
+                justifyContent: 'center',                                    
+                borderRadius: '5px',color: '#FFFFFF',
+                padding: '10px', 
+            marginLeft: {xs: '95px', sm: '95px', md: '300px'}}}        
+                    >
+                    Submit
+                </Button> 
+                }
+
+            
            {/* {loading ? 
             <Button className={classes.CTABtn} 
             type='submit'
