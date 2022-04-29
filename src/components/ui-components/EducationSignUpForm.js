@@ -40,6 +40,24 @@ const useStyles = makeStyles((theme) => ({
         //   marginTop: '-500px',
         //         },
     },
+        heading: {
+            fontFamily: 'Manrope',
+            fontStyle: 'normal',
+            fontWeight: '700',
+            fontSize: '38px',
+            lineHeight: '55px',
+            color: '#FFF',
+            marginBottom: '25px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            [theme.breakpoints.down('sm')]: {
+            fontWeight: '600',
+              fontSize: '35px',  
+              lineHeight: '40px',
+              }
+    
+        },
     input:{
       [theme.breakpoints.down('sm')]: {
         marginTop: '-500px',
@@ -67,14 +85,17 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-export default function ContactForm({url}) {
+export default function EducationSignUpForm({url, snackBarState}) {
 
+    const [snackBar, setSnackBar] = useState('Nothing')
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
   
     const handleClick = () => {
       setOpen(true);
     };
+
+
   
     const handleClose = (event, reason) => {
       if (reason === 'clickaway') {
@@ -100,7 +121,7 @@ export default function ContactForm({url}) {
 const onSubmit = async(e) => {
   e.preventDefault()
   setLoading(true)
-
+    
   alert('Submitting')
 
 //   var formdata = new FormData();
@@ -125,7 +146,8 @@ const onSubmit = async(e) => {
 
 
   return (
-
+      <Box>
+    <Container>
         <Box
             component="form"
             sx={{
@@ -139,9 +161,10 @@ const onSubmit = async(e) => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              marginTop: '125px'
+              marginTop: '25px'
             }}
             >
+                <h1 className={classes.heading}>Sign Up <br/> Maliln Greats SmartFarma <br/> Education</h1>
             <div>
                 <TextField
                 name="name"
@@ -158,7 +181,7 @@ const onSubmit = async(e) => {
                 sx={{backgroundColor: '#FFF', 
                 border: 'none', 
                 borderRadius: '5px', 
-                opacity: '0.2', 
+                opacity: '0.4', 
                 padding: '5px', 
                 margin: '10px',
                 outline: 'none'}}
@@ -177,7 +200,7 @@ const onSubmit = async(e) => {
                 sx={{backgroundColor: '#FFF', 
                 border: 'none', 
                 borderRadius: '5px', 
-                opacity: '0.2', 
+                opacity: '0.4', 
                 padding: '5px', 
                 margin: '10px',
                 outline: 'none'}}
@@ -189,13 +212,14 @@ const onSubmit = async(e) => {
             width: '93%',
             margin: '10px',
             fontSize: '16px',
+            fontWeight: '500',
             lineHeight: '25px',
-            backgroundColor: '#143B65',                            
-            borderRadius: '5px',color: '#FFFFFF',
+            backgroundColor: '#60FF5C',                            
+            borderRadius: '5px',color: '#143B65',
             padding: '10px',
         }}        
             >
-                GET STARTED
+                Sign Up
             </Button> 
            {/* {loading ? 
             <Button className={classes.SubmitBtn} 
@@ -217,12 +241,12 @@ const onSubmit = async(e) => {
             
             </div>
         </Box>
-    //   </Container>
-    //   <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-    //     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-    //       Message Sent, You Will Be Replied Shortly
-    //     </Alert>
-    //   </Snackbar>
-    // </Box>
+    </Container>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Message Sent, You Will Be Replied Shortly
+        </Alert>
+      </Snackbar>
+    </Box>
   );
 }

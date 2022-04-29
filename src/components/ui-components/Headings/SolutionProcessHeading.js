@@ -19,21 +19,14 @@ textPrimary: {
     display: 'flex',
     justifyContent: 'center',
     aignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontWeight: '600',
+      fontSize: '35px',  
+      lineHeight: '35px',
+      marginTop: '25px'
+  }
 
 },
-textSecondary: {
-  color: '#000000',
-  fontFamily: 'Manrope',
-  fontStyle: 'normal',
-  fontWeight: '500',
-  fontSize: '20px',  
-  lineHeight: '30px',
-
-  display: 'flex',
-  justifyContent: 'center',
-  aignItems: 'center',
-
-}
     
 }))
 

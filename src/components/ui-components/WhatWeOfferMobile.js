@@ -13,6 +13,11 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '75px',
         display: 'flex',
         justifyContent: 'space-between',
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: 'column-reverse',
+            marginTop: '45px'
+      
+        }
     },
     heading: {
         fontFamily: 'Manrope',
@@ -21,7 +26,12 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '50px',
         lineHeight: '45px',
         color: '#000',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        [theme.breakpoints.down('sm')]: {
+            fontWeight: '600',
+            fontSize: '35px',  
+            lineHeight: '5px',
+        }
 
     },
     body: {
@@ -77,7 +87,7 @@ const WhatWeOfferMobile = () => {
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Consulting</h6>
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Native and Cross Platform Apps</h6>
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Mordern UI Design</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Web Portals</h6>
+                {/* <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Web Portals</h6> */}
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> API Intergration</h6>
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Maintanance and Support</h6>
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Redesign</h6>

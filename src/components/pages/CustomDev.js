@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import CustomDevHero from '../ui-components/CustomDevHero'
 import AppBar from '../ui-components/AppBar'
 import WhatWeofferHeading from '../ui-components/Headings/WhatWeOfferHeading'
@@ -10,6 +11,9 @@ import GetInTouch from '../ui-components/GetInTouch'
 import Footer from '../ui-components/Footer'
 
 const CustomDev = () => {
+  useEffect(()=> {
+    window.scrollTo(0, 0);
+  }, [])
   return (
     <>
     <AppBar/>

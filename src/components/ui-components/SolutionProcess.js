@@ -15,7 +15,11 @@ title: {
   fontWeight: '800',
   fontSize: '30px',  
   lineHeight: '5px', 
-  textAlign: 'left'
+  textAlign: 'left',
+  [theme.breakpoints.down('sm')]: {
+    lineHeight: '30px'
+}
+  
 },
 text: {
   color: '#FFF',
@@ -31,7 +35,11 @@ img: {
   width: 'auto',
   display: 'flex',
   justifyContent: 'center',
-  marginLeft: '85px'
+  marginLeft: '85px',
+  [theme.breakpoints.down('sm')]: {
+    // transform: 'rotate(0.5turn)',
+    display: 'none'
+}
 },
 box: {
     backgroundColor: '#143B65 !important',
@@ -43,13 +51,13 @@ box: {
 const SolutionProcess = () => {
     const classes = useStyles();
     return (
-    <Box sx={{backgroundColor: '#143B65', padding: '45px'}}>
+    <Box sx={{backgroundColor: '#143B65', padding: {xs: '5px', md: '45px'}}}>
         <Container>
             <Grid container spacing={1}>
-                <Grid item xs={2}>
+                <Grid item xs={12} md={2}>
                     <img className={classes.img} src={line} alt=""/>
                 </Grid>
-                <Grid item xs={10}>
+                <Grid item xs={12} md={10} sx={{zIndex: '5'}}>
                 <Stack spacing={2}>
                     <Box>
                         <h2 className={classes.title}>Discovery Call and Research</h2>
@@ -57,7 +65,7 @@ const SolutionProcess = () => {
                     </Box>
                     <Box>
                         <h2 className={classes.title}>System Design</h2>
-                        <h6 className={classes.text}>Based on the system requirements, the developement team works on defining the overall software architecture: an organized flow of elements in a software code.</h6>
+                        <h6 className={classes.text}>Based on the  system requirements, the developement team works on defining the overall software architecture: an organized flow of elements in a software code and pricing for the project.</h6>
                     </Box>
                     <Box>
                         <h2 className={classes.title}>Interface Design</h2>
@@ -90,6 +98,7 @@ const SolutionProcess = () => {
                 padding: '13px',
                 display: 'flex',
                 justifyContent: 'center',
+                margin: {xs:'5px', md: '45px'},
             }}
             >
                 Work With Us

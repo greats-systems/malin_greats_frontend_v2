@@ -19,7 +19,12 @@ text: {
   fontWeight: '800',
   fontSize: '50px',  
   lineHeight: '35px', 
-  textAlign: 'left'
+  textAlign: 'left',
+  [theme.breakpoints.down('sm')]: {
+    fontWeight: '600',
+  fontSize: '30px',  
+  lineHeight: '35px', 
+}
 },
 
 
@@ -38,7 +43,7 @@ const ProjectsIntro = () => {
                 backgroundColor: '#143B65',
                 borderRadius: '10px',
                 color: '#FFF',
-                padding: '15px'
+                padding: {xs: '5px', md:'15px'}
 
             }}
         >

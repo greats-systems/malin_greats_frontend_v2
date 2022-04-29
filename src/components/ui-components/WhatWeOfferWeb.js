@@ -13,6 +13,11 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '75px',
         display: 'flex',
         justifyContent: 'space-between',
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: 'column',
+            marginTop: '45px'
+      
+        }
     },
     heading: {
         fontFamily: 'Manrope',
@@ -21,7 +26,12 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '50px',
         lineHeight: '45px',
         color: '#000',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        [theme.breakpoints.down('sm')]: {
+            fontWeight: '600',
+            fontSize: '35px',  
+            lineHeight: '5px',
+        }
 
     },
     body: {

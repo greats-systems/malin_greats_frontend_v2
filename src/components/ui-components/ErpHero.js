@@ -17,7 +17,12 @@ const useStyles = makeStyles((theme) => ({
     img: {
         width: '100%',
         top: '150px',
-        marginLeft: '75px'
+        marginLeft: '75px',
+        [theme.breakpoints.down('sm')]: {
+            marginLeft:'0px',
+            marginTop: '25px',
+
+        }
     },
     heading1: {
         width: '145%',
@@ -30,9 +35,11 @@ const useStyles = makeStyles((theme) => ({
 
         color: '#000000',
         [theme.breakpoints.down('sm')]: {
-        lineHeight: '30px',
-        fontSize: '30px',
-          },
+            marginTop: '-50px',
+            width: '90%',
+            lineHeight: '30px',
+            fontSize: '30px',
+              },
     },
     body: {
         width: '150%',
@@ -49,12 +56,18 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             // lineHeight: '30px',
             fontSize: '18px',
+            width: '90%'
+
               },
     },
     buttonBox: {
         width: '125%',
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+
+              },
 
     },
     CTABtn: {
@@ -144,7 +157,7 @@ const ErpHero = () => {
                 boxShadow: '0px 67px 80px rgba(55, 52, 169, 0.07), 0px 43.4259px 46.8519px rgba(55, 52, 169, 0.0531481), 0px 25.8074px 25.4815px rgba(55, 52, 169, 0.0425185), 0px 13.4px 13px rgba(55, 52, 169, 0.035), 0px 5.45926px 6.51852px rgba(55, 52, 169, 0.0274815), 0px 1.24074px 3.14815px rgba(55, 52, 169, 0.0168519)',
             }}
             variant="contained"
-            onClick={(()=> {navigate("/contact");})}
+            onClick={(()=> {navigate("/erp");})}
             startIcon={<PlayCircleIcon sx={{color: '#60FF5C', fontSize :'70px'}}/>}
             >
                 How It Works

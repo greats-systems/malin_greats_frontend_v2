@@ -16,6 +16,12 @@ text: {
     display: 'flex',
     justifyContent: 'center',
     aignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontWeight: '600',
+    fontSize: '35px',  
+    lineHeight: '40px',
+    marginTop: '75px',
+    }
 
 }
     

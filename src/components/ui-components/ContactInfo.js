@@ -18,6 +18,11 @@ const useStyles = makeStyles((theme) => ({
         color: '#FFF',
         display: 'inline',
         // marginBottom: '15px',
+        [theme.breakpoints.down('sm')]: {
+            fontWeight: '600',
+            fontSize: '35px',
+            lineHeight: '70px',
+              },
     }, 
     text: {
         fontFamily: 'Manrope',
@@ -27,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
         // lineHeight: '60px',
         margin: '5px',
         color: '#FFF',
+        [theme.breakpoints.down('sm')]: {
+            fontWeight: '380',
+            fontSize: '18px',
+            // lineHeight: '70px',
+              },
 
     },
 }))
@@ -37,14 +47,14 @@ const ContactInfo = () => {
     <Box className={classes.topBox}>
         <Container>
             <Grid container spacing={4}>
-                <Grid item xs={7}>
-                    <h1 className={classes.title}>Contact Us </h1> <PermContactCalendarIcon sx={{fontSize: '50px', color: '#60FF5C', display: 'inline'}}/>
+                <Grid item xs={12} md={7}>
+                    <h1 className={classes.title}>Contact Us </h1> <PermContactCalendarIcon sx={{fontSize: {xs: '35px', md: '50px'}, color: '#60FF5C', display: 'inline'}}/>
                     <h4 className={classes.text}>sales@malingreatssmartssytems.co.zw</h4>
                     <h4 className={classes.text}>+263777757603</h4>
                     <h4 className={classes.text}>+263712573552</h4>
                 </Grid>
-                <Grid item xs={5}>
-                    <h1 className={classes.title}>Find Us</h1> <LocationOnIcon sx={{fontSize: '50px', color: '#60FF5C', display: 'inline'}}/>
+                <Grid item xs={12} md={5}>
+                    <h1 className={classes.title}>Find Us</h1> <LocationOnIcon sx={{fontSize: {xs: '35px', md: '50px'}, color: '#60FF5C', display: 'inline'}}/>
                     <h4 className={classes.text}>7th Floor Heritage House</h4>
                     <h4 className={classes.text}>67 Samora Matchel,</h4>
                     <h4 className={classes.text}>Harare, Zimbabwe</h4>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import AppBar from '../ui-components/AppBar'
 import ErpHero from '../ui-components/ErpHero'
 import IndustriesHeading from '../ui-components/Headings/IndustryHeading'
@@ -15,6 +15,9 @@ import Footer from '../ui-components/Footer'
 
 // import BasicSolution from '../ui-components/BasicSolution'
 const Erp = () => {
+  useEffect(()=> {
+    window.scrollTo(0, 0);
+  }, [])
   return (
     <>
     <AppBar/>

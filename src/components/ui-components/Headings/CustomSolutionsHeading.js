@@ -16,6 +16,12 @@ textPrimary: {
     display: 'flex',
     justifyContent: 'center',
     aignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontWeight: '600',
+    fontSize: '35px',  
+    lineHeight: '40px',
+    marginTop: '75px',
+    }
 
 },
 textSecondary: {
@@ -29,6 +35,11 @@ textSecondary: {
   display: 'flex',
   justifyContent: 'center',
   aignItems: 'center',
+  [theme.breakpoints.down('sm')]: {
+    fontWeight: '350',
+  fontSize: '20px',  
+  lineHeight: '25px',
+  }
 
 }
     

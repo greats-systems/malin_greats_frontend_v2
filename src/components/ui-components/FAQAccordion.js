@@ -9,7 +9,7 @@ import Box from '@mui/material/Box'
 
 export default function SimpleAccordion() {
   return (
-    <Box sx={{marginTop: '45px'}}>
+    <Box sx={{marginTop: {xs:'5px', md: '45px'}}}>
       <Accordion>
         <AccordionSummary
           expandIcon={<AddIcon />}
@@ -34,8 +34,7 @@ export default function SimpleAccordion() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          For custom solutions it takes 24 to 48 hours depending on the number of modules. Industry solutions can take up to a week
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -49,8 +48,7 @@ export default function SimpleAccordion() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Yes the system can be used offline, however, this requires a physical system installation which comes at an additional cost
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -64,8 +62,7 @@ export default function SimpleAccordion() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Yes, we offer a free 3 hour training for up to 3 company employees. If you require more training please request a quotation.
           </Typography>
         </AccordionDetails>
       </Accordion>

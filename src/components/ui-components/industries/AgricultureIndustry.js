@@ -2,10 +2,15 @@ import { Box, Button, Container } from '@mui/material'
 import React from 'react'
 import HdrWeakIcon from '@mui/icons-material/HdrWeak';
 import { makeStyles } from '@mui/styles';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 import IndustryBg from '../../../assets/industry-solution-bg.svg'
 import IndustryAgric from '../../../assets/industry-solution-agric.png'
+import ErpHeaderBg from '../../../assets/erp-header-bg.svg'
 
+
+import AgriSignUpForm from '../../ui-components/AgriSignUpForm'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -13,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '75px',
         display: 'flex',
         justifyContent: 'space-between',
+        [theme.breakpoints.down('sm')]: {
+          flexDirection: 'column',
+          marginTop:'50px'
+          }
     },
     heading: {
         fontFamily: 'Manrope',
@@ -21,7 +30,12 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '50px',
         lineHeight: '45px',
         color: '#000',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        [theme.breakpoints.down('sm')]: {
+        fontWeight: '600',
+          fontSize: '35px',  
+          lineHeight: '40px',
+          }
 
     },
     body: {
@@ -31,7 +45,12 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '18px',
         lineHeight: '25px',
         color: '#000',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        [theme.breakpoints.down('sm')]: {
+            fontWeight: '400',
+              fontSize: '22px',  
+              lineHeight: '20px',
+              }
     },
     list: {
         fontFamily: 'Manrope',
@@ -40,7 +59,10 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '18px',
         lineHeight: '5px',
         color: '#000',
-        margin: '15px'
+        margin: '15px',
+        [theme.breakpoints.down('sm')]: {
+            fontWeight: '400',
+              }
     },
     dot: {
         color: '#143B65', 
@@ -57,13 +79,32 @@ const useStyles = makeStyles((theme) => ({
         color: '#FFF',
         borderRadius: '10px',
         width: '45%'
+    },
+    img: {
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+          }
+    },
+    modal: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '60%',
+        backgroundColor: '#143B65',
+        // border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
     }
     
 }))
 
 
-const AgricultureIndustry = () => {
+const AgricultureIndustry = ({snackBarState}) => {
     const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
     return (
     <Box sx={{ backgroundImage: `url(${IndustryBg})`}}>
@@ -76,7 +117,7 @@ const AgricultureIndustry = () => {
         />
         <Box>
             <h2 className={classes.heading}>Agriculture</h2>
-            <h5 className={classes.body}>Modern farming requires modern solutions and this comprehensive agriculture ERP software for farmers is just that</h5>
+            <h5 className={classes.body}>Explore Farming Agribusiness Resource Management App (SMART FARMA)- a comprehensive agriculture ERP solution for modern farmers </h5>
             <Box >
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Keep Track of Assets</h6>
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Employees</h6>
@@ -100,12 +141,25 @@ const AgricultureIndustry = () => {
         borderRadius: '10px',
         width: '45%'
             }}
+            onClick={handleOpen}
             >
-                Sign Up
+                Free Sign Up
             </Button>
         </Box>
         </Box>
+    <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className={classes.modal} sx={{ backgroundImage: `url(${ErpHeaderBg})`}}>
+          <AgriSignUpForm snackBarState={snackBarState}/>
+        </Box>
+      </Modal>
     </Container>
+
+
     </Box>
   )
 }

@@ -17,7 +17,12 @@ const useStyles = makeStyles((theme) => ({
     img: {
         width: '85%',
         marginTop: '120px',
-        marginLeft: '75px'
+        marginLeft: '75px',
+        [theme.breakpoints.down('sm')]: {
+            marginLeft:'0px',
+            marginTop: '15px',
+
+        }
     },
     heading1: {
         width: '145%',
@@ -30,6 +35,8 @@ const useStyles = makeStyles((theme) => ({
 
         color: '#000000',
         [theme.breakpoints.down('sm')]: {
+        marginTop: '-35px',
+        width: '90%',
         lineHeight: '30px',
         fontSize: '30px',
           },
@@ -49,6 +56,8 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             // lineHeight: '30px',
             fontSize: '18px',
+            width: '90%'
+
               },
     },
     buttonBox: {

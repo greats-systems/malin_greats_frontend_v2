@@ -19,6 +19,13 @@ textPrimary: {
     display: 'flex',
     justifyContent: 'center',
     aignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontWeight: '600',
+      fontSize: '35px',  
+      lineHeight: '5px',
+      marginTop: '-25px',
+
+  }
 
 },
 textSecondary: {
@@ -32,6 +39,13 @@ textSecondary: {
   display: 'flex',
   justifyContent: 'center',
   aignItems: 'center',
+  [theme.breakpoints.down('sm')]: {
+    fontWeight: '350',
+    fontSize: '20px',  
+    lineHeight: '25px',
+    marginTop: '25px',
+
+}
 
 }
     
@@ -44,7 +58,7 @@ const WhatWeofferHeading = () => {
     <Box className={classes.topBox}>
         <Container>
         <h1 className={classes.textPrimary}>What We Offer</h1>
-        <h4 className={classes.textSecondary}>We develop tailored web and mobile based software solutions for starts ups, SMEs and large organisations looking to achieve operational excellence. We design and engineer software for agriculture, retail, banking, manufacturing, healthcare, and other industries. Whether you are an existing business or are looking to develop and launch a software product get in touch and we’ll help you turn an idea into a reality.</h4>
+        <h4 className={classes.textSecondary}>We develop tailored web and mobile based software solutions for starts ups, SMEs and large organisations looking to achieve operational excellence. Our clients are in agriculture, retail, banking, manufacturing, healthcare, and other industries. Whether you are an existing business or are looking to develop and launch a software product get in touch and we’ll help you turn an idea into a reality.</h4>
         </Container>
     </Box>
   )

@@ -202,7 +202,7 @@ const onSubmit = async(e) => {
                 label="Full Name"
                 id="outlined-size-small"
                 size="medium"
-                sx={{backgroundColor: '#C4C4C4',borderRadius: '0px'}}
+                sx={{backgroundColor: '#f0f0f0',borderRadius: '0px'}}
                 />
 
             <TextField
@@ -212,7 +212,7 @@ const onSubmit = async(e) => {
                 label="Company Name"
                 id="outlined-size-small"
                 size="medium"
-                sx={{backgroundColor: '#C4C4C4',borderRadius: '0px'}}
+                sx={{backgroundColor: '#f0f0f0',borderRadius: '0px'}}
                 />
 
             
@@ -224,7 +224,7 @@ const onSubmit = async(e) => {
                 label="Email Address"
                 id="outlined-size-small"
                 size="medium"
-                sx={{backgroundColor: '#C4C4C4',borderRadius: '0px'}}
+                sx={{backgroundColor: '#f0f0f0',borderRadius: '0px'}}
                 />
            
             <TextField
@@ -234,7 +234,7 @@ const onSubmit = async(e) => {
                 label="Phone Number"
                 id="outlined-size-small"
                 size="medium"
-                sx={{backgroundColor: '#C4C4C4',borderRadius: '0px'}}
+                sx={{backgroundColor: '#f0f0f0',borderRadius: '0px'}}
                 />
            
             <TextField
@@ -245,7 +245,7 @@ const onSubmit = async(e) => {
                 label="Tell us more about the project you have in mind"
                 multiline
                 rows={6}
-                sx={{backgroundColor: '#C4C4C4', borderRadius: '0px'}}
+                sx={{backgroundColor: '#f0f0f0', borderRadius: '0px'}}
                 />
 
             <Button className={classes.CTABtn} 
@@ -260,7 +260,7 @@ const onSubmit = async(e) => {
             justifyContent: 'center',                                    
             borderRadius: '5px',color: '#FFFFFF',
             padding: '10px', 
-        marginLeft: '300px'}}        
+        marginLeft: {xs: '95px', sm: '95px', md: '300px'}}}        
                 >
                 Submit
             </Button> 

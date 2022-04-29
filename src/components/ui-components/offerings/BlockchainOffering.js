@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { Box, Button, Container, Grid } from '@mui/material'
 import React from 'react'
 import HdrWeakIcon from '@mui/icons-material/HdrWeak';
@@ -22,7 +23,14 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: '65px',
         color: '#000',
         marginBottom: '5px',
-        marginTop: '75px'
+        marginTop: '75px',
+        [theme.breakpoints.down('sm')]: {
+            fontWeight: '600',
+            fontSize: '30px',
+            lineHeight: '35px',
+            marginTop: '45px',
+
+        }
 
     },
     body: {
@@ -52,12 +60,12 @@ const useStyles = makeStyles((theme) => ({
 
 const ErpOffering = () => {
     const classes = useStyles();
-
+    let navigate = useNavigate()
     return (
     <Box sx={{ backgroundImage: `url(${IndustryBg})`}}>
     <Container>
         <Grid container spacing={3}  >
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={12} md={6}>
         <Box>
             <h2 className={classes.heading}>Blockchain App Development</h2>
             <h5 className={classes.body}>We create decentralized blockchain networks that provide increased traceability and security of data and transactions in agriculture, finance, government and more.</h5>
@@ -72,12 +80,13 @@ const ErpOffering = () => {
                 textTransform: 'none'
             }}
             className={classes.button}
+            onClick={() => navigate('/')}
             >
                 Learn More
             </Button>
         </Box>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={12} md={6}>
         <img 
         src={BlockchainImg} 
         alt="Malin Greats Logo" 

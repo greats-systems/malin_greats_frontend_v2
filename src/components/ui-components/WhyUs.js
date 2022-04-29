@@ -30,7 +30,13 @@ title: {
   fontSize: '40px',  
   lineHeight: '45px', 
   textAlign: 'left',
-  width: '50%'
+  width: '50%',
+  [theme.breakpoints.down('sm')]: {
+    fontWeight: '600',
+  fontSize: '30px',  
+  lineHeight: '40px',
+  width: '85%'
+  }
 },
 img: {
   width: '35px',
@@ -43,7 +49,10 @@ box: {
     marginBottom: '45px',
     display: 'flex',
     justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '5px'
+    }
 }
 
 
@@ -57,19 +66,19 @@ const WhyUs = () => {
         <Container>
         <h1 className={classes.title}>Always ready to deliver the best solution for you and your business</h1>
         <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={12} md={6}>
                 <Box className={classes.box}><img className={classes.img} src={CleanUI} alt=""/> <h2 className={classes.text}>Clean UX/UI</h2> </Box>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={12} md={6}>
             <Box className={classes.box}><img className={classes.img} src={UserOriented} alt=""/> <h2 className={classes.text}>User Oriented Approach</h2> </Box>
             </Grid>
         </Grid>
 
         <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={12} md={6}>
                 <Box className={classes.box}><img className={classes.img} src={Secure} alt=""/> <h2 className={classes.text}>Secure Systems</h2> </Box>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={12} md={6}>
             <Box className={classes.box}><img className={classes.img} src={DedicatedTeam} alt=""/> <h2 className={classes.text}>Dedicated Team</h2> </Box>
             </Grid>
         </Grid>

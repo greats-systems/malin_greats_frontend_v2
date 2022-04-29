@@ -18,6 +18,13 @@ header: {
     lineHeight: '45px',
     marginTop: '45px',
     marginBottom: '45px',
+    [theme.breakpoints.down('sm')]: {
+      fontWeight: '600',
+    fontSize: '35px',  
+    lineHeight: '40px',
+    marginTop: '35px',
+    width: '90%'
+    }
 
     // display: 'flex',
     // justifyContent: 'center',
@@ -31,6 +38,12 @@ text: {
   fontWeight: '400',
   fontSize: '20px',  
   lineHeight: '15px', 
+  [theme.breakpoints.down('sm')]: {
+    display: 'flex',
+  justifyContent: 'center',
+  lineHeight: '20px',
+  paddingLeft: '25px'
+  }
 },
 grid: {
   display: 'flex',
@@ -41,7 +54,11 @@ grid: {
 img: {
   width: '100px',
   display: 'flex',
-  justifyContent: 'center'
+  justifyContent: 'center',
+
+  [theme.breakpoints.down('sm')]: {
+    width: '65px',
+  }
 },
 
     
@@ -56,15 +73,16 @@ const Values = () => {
         <Grid container spacing={2}>
         <Grid item xs={4} className={classes.grid} >
         <Stack spacing={2} justifyContent="center" alignItems="center">
-        <img className={classes.img} src={SecuritySvg} alt=''/>
-        <h4 className={classes.text}>100% Secure</h4>
+        <img className={classes.img} src={UsersSvg} alt=''/>
+        <h4 className={classes.text}>Multiple User Login</h4>
         </Stack>
 
         </Grid>
         <Grid item xs={4} className={classes.grid}>
         <Stack spacing={2} justifyContent="center" alignItems="center">
-        <img className={classes.img} src={UsersSvg} alt=''/>
-        <h4 className={classes.text}>Multiple User Login</h4>
+        
+        <img className={classes.img} src={SecuritySvg} alt=''/>
+        <h4 className={classes.text}>100% Secure</h4>
         </Stack>
         </Grid>
         <Grid item xs={4} className={classes.grid}>
