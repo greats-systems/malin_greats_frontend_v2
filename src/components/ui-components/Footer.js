@@ -142,13 +142,13 @@ export default function Footer({url}) {
                     <Box sx={{marginTop: {md:'45px'}}}>
                     <h5 className={classes.list} onClick={() => {navigate("/about")}}>About Us</h5>
                     <h5 className={classes.list} onClick={() => {navigate("/contact")}}>Get In Touch</h5>
-                    <h5 className={classes.list} onClick={() => {navigate("/blog")}}>Blog</h5>
+                    <h5 className={classes.list} onClick={() => {navigate("/")}}>Blog</h5>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
                     <h3 className={classes.title} >What We Offer</h3>
                     <Box sx={{marginTop: {md:'45px'}}}>
-                    <h5 className={classes.list} onClick={() => {navigate("/blockchain")}}>Blockchain</h5>
+                    <h5 className={classes.list} onClick={() => {navigate("/")}}>Blockchain</h5>
                     <h5 className={classes.list} onClick={() => {navigate("/customDev")}}>Custom Software</h5>
                     <h5 className={classes.list} onClick={() => {navigate("/erp")}}>Enterprise Systems</h5>
                     </Box>

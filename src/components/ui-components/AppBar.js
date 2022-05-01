@@ -382,6 +382,15 @@ const ResponsiveAppBar = () => {
                             </Button>
                             <Button className={classes.navLinks} >
                                 <NavLink
+                                to="/about"
+                                className={classes.navLinks}
+                                style={({ isActive }) =>
+              isActive ? activeStyle : undefined
+            }
+                                >ABOUT</NavLink>
+                            </Button>
+                            <Button className={classes.navLinks} >
+                                <NavLink
                                 to="/contact"
                                 className={classes.navLinks}
                                 style={({ isActive }) =>
@@ -443,6 +452,15 @@ const ResponsiveAppBar = () => {
                                                 <PeopleAltIcon sx={{color: '#007BFF'}}/>
                                             </ListItemIcon>
                                             <ListItemText primary="Custom Development" />
+                                        </ListItemButton>
+
+                                        <ListItemButton onClick={()=> {
+                                            navigate("/about")
+                                        }}>
+                                            <ListItemIcon>
+                                                <SettingsIcon sx={{color: '#007BFF'}}/>
+                                            </ListItemIcon>
+                                            <ListItemText primary="About" />
                                         </ListItemButton>
 
                                         <ListItemButton onClick={()=> {

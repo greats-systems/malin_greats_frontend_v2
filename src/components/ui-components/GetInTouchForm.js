@@ -123,7 +123,7 @@ const onSubmit = async(e) => {
 
 
   return (
-
+      <Container sx={{marginTop: {xs:'5px', lg:'125px'}}}>
         <Box
             component="form"
             sx={{
@@ -137,7 +137,6 @@ const onSubmit = async(e) => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              marginTop: '125px'
             }}
             >
             <div>
@@ -237,7 +236,7 @@ const onSubmit = async(e) => {
             
             </div>
         </Box>
-    //   </Container>
+    </Container>
     //   <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
     //     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
     //       Message Sent, You Will Be Replied Shortly
