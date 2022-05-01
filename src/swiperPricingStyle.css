@@ -36,6 +36,7 @@
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  width: 5%;
 }
 
 .swiper .swiper-button-next::after {
@@ -47,6 +48,7 @@
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  width: 5%;
 }
 
 .swiper .swiper-button-prev::after {

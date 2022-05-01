@@ -1,6 +1,7 @@
 import './App.css';
 import Routes from './routes'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 const font =  "'Manrope', sans-serif";
 const font2 =  "'Oxanium'";
@@ -22,6 +23,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes/>
+      {/* <TawkMessengerReact
+                propertyId="626e3e8a7b967b11798d4c01"
+                widgetId="1g1va8k9n"/> */}
     </ThemeProvider>
   );
 }

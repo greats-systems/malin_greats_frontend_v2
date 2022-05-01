@@ -116,7 +116,7 @@ const Hero = () => {
                 padding: '10px 25px 10px 25px',
                 margin: '10px 25px 10px 25px',
             }}
-            onClick={(()=> {navigate("/contact");})}
+            onClick={(()=> {navigate("/erp");})}
             >
                 Get Started
             </Button>

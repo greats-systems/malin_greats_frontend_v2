@@ -47,7 +47,8 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '38px',
             lineHeight: '55px',
             color: '#FFF',
-            margin: '25px',
+            marginBottom: '25px',
+            marginRight: '25px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -85,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-export default function EducationSignUpForm({url, snackBarState}) {
+export default function QuotationForm({url, snackBarState}) {
 
     const [snackBar, setSnackBar] = useState('Nothing')
     const [open, setOpen] = useState(false);
@@ -120,26 +121,28 @@ export default function EducationSignUpForm({url, snackBarState}) {
 
 const onSubmit = async(e) => {
   e.preventDefault()
-  if(values.name != '' && values.email != '') {
+  if(values.name !== '' && values.email !== '') {
     setLoading(true)
+    
+  var formdata = new FormData();
+  formdata.append("fullName", values.name);
+  formdata.append("email", values.email);
 
-    var formdata = new FormData();
-    formdata.append("fullName", values.name);
-    formdata.append("email", values.email);
+  var requestOptions = {
+    method: 'POST',
+    body: formdata,
+    redirect: 'follow'
+  };
 
-    var requestOptions = {
-      method: 'POST',
-      body: formdata,
-      redirect: 'follow'
-    };
-
-    const res = await fetch("https://backend.malingreats.org/edu-signup", requestOptions)
-    console.log(res.status)
-      if (res.status === 200) {
-          setLoading(false)
-          // handleClick()
-        }
+//   const res = await fetch("http://localhost:8000/quotation", requestOptions)
+  const res = await fetch("https://backend.malingreats.org/quotation", requestOptions)
+  console.log(res.status)
+    if (res.status === 200) {
+        setLoading(false)
+        // handleClick()
       }
+  }
+  
 }
 
 
@@ -162,10 +165,10 @@ const onSubmit = async(e) => {
               marginTop: '25px'
             }}
             >
-
-            <h1 className={classes.heading}>Sign Up <br/>SmartEducation</h1>
+                <h1 className={classes.heading}>Request <br/> Quotation</h1>
             <div>
                 <TextField
+                required="true"
                 name="name"
                 value={values.name}
                 onChange={handleInputChange}
@@ -187,6 +190,7 @@ const onSubmit = async(e) => {
                 />
            
                 <TextField
+                required="true"
                 name="email"
                 value={values.email}
                 onChange={handleInputChange}
@@ -205,7 +209,7 @@ const onSubmit = async(e) => {
                 margin: '10px',
                 outline: 'none'}}
                 />
-                {loading ? 
+              {loading ? 
                   <Button className={classes.SubmitBtn} 
                   type='submit'
                   variant="contained"
@@ -238,10 +242,9 @@ const onSubmit = async(e) => {
             padding: '10px',
         }}        
             >
-                Sign Up
+                Submit
             </Button> 
                 }
-           
            {/* {loading ? 
             <Button className={classes.SubmitBtn} 
             type='submit'

@@ -92,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translate(-50%, -50%)',
         width: '60%',
         backgroundColor: '#143B65',
+        borderRadius: '10px',
         // border: '2px solid #000',
         boxShadow: 24,
         p: 4,
@@ -112,7 +113,7 @@ const AgricultureIndustry = () => {
         <Box className={classes.div}  >
         
         <Box>
-            <h2 className={classes.heading}>Retail</h2>
+            <h2 className={classes.heading}>Smart Retail</h2>
             <h5 className={classes.body}>Manage everyday transactions with ease through a retail ERP system that provides consistent flow of information in real-time. Point of Sale Real-time</h5>
             <Box >
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Point of Sale</h6>

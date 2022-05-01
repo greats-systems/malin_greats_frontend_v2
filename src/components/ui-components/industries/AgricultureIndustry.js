@@ -92,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translate(-50%, -50%)',
         width: '60%',
         backgroundColor: '#143B65',
+        borderRadius: '10px',
         // border: '2px solid #000',
         boxShadow: 24,
         p: 4,
@@ -116,7 +117,7 @@ const AgricultureIndustry = ({snackBarState}) => {
         className={classes.img}
         />
         <Box>
-            <h2 className={classes.heading}>Agriculture</h2>
+            <h2 className={classes.heading}>Smart Agriculture</h2>
             <h5 className={classes.body}>Explore Farming Agribusiness Resource Management App (SMART FARMA)- a comprehensive agriculture ERP solution for modern farmers </h5>
             <Box >
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Keep Track of Assets</h6>

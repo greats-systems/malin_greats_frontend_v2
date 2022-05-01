@@ -3,11 +3,35 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 // import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddIcon from '@mui/icons-material/Add';
 import Box from '@mui/material/Box'
+import Modal from '@mui/material/Modal';
+import { makeStyles } from '@mui/styles';
+import QuotationForm from './QuotationForm'
+
+const useStyles = makeStyles((theme) => ({
+  modal: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: '60%',
+      backgroundColor: '#143B65',
+      borderRadius: '10px',
+      // border: '2px solid #000',
+      boxShadow: 24,
+      p: 4,
+  }
+  
+}))
 
 export default function SimpleAccordion() {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+const handleOpen = () => setOpen(true);
+const handleClose = () => setOpen(false);
   return (
     <Box sx={{marginTop: {xs:'5px', md: '45px'}}}>
       <Accordion>
@@ -64,8 +88,33 @@ export default function SimpleAccordion() {
           <Typography>
           Yes, we offer a free 3 hour training for up to 3 company employees. If you require more training please request a quotation.
           </Typography>
+          <Button
+            variant="contained"
+            onClick={handleOpen}
+            sx={{
+                textDecoration:'none',
+                backgroundColor: '#143B65',
+                                            
+                borderRadius: '45px',color: '#FFFFFF',
+                padding: '10px 25px 10px 25px',
+                margin: '10px 25px 10px 0px',
+            }}
+            // onClick={(()=> {navigate("/erp");})}
+            >
+                Request Quotation
+            </Button>
         </AccordionDetails>
       </Accordion>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className={classes.modal}>
+          <QuotationForm/>
+        </Box>
+      </Modal>
     </Box>
   );
 }

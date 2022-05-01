@@ -112,7 +112,7 @@ const AdvancedSolution = () => {
                 </Grid>
             </Grid>
 
-            <Button variant='contained'
+            {/* <Button variant='contained'
             // className={classes.button}
             sx={{
             display: 'flex',
@@ -130,7 +130,7 @@ const AdvancedSolution = () => {
         }}
             >
                 Build Your Solution
-            </Button>
+            </Button> */}
     </Box>
   )
 }

@@ -71,47 +71,52 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
+const initialValues = {
+    email: '',
+  }
 
 export default function Footer({url}) {
     let navigate = useNavigate()
     const classes = useStyles();
 
-    const [greats] = useState('https://malingreats.org')
+    const [values, setValues] = useState(initialValues)
 
-    const [email, setEmail] = useState('')
-    const [phone1, setPhone1] = useState('')
-    const [phone2, setPhone2] = useState('')
+    const handleInputChange = (e) => {
+      const {name, value} = e.target;
+  
+      setValues({
+          ...values,
+          [name]: value,
+      })
 
-    const getPhone = async() => {
-        var requestOptions = {
-          method: 'GET',
-          redirect: 'follow'
-        };
-        
-        const res = await fetch(`${url}/api/phone`, requestOptions)
-        const data = await res.json()
-        console.log("Phone DATA", data)
-        setPhone1(data[0].number)
-        setPhone2(data[0].number2)
     }
-    
 
-    const getEmail = async() => {
+
+    const onSubmit = async(e) => {
+        e.preventDefault()
+        if(values.email !== '') {
+        //   setLoading(true)
+          
+        var formdata = new FormData();
+        formdata.append("email", values.email);
+      
         var requestOptions = {
-          method: 'GET',
+          method: 'POST',
+          body: formdata,
           redirect: 'follow'
         };
+      
+        const res = await fetch("https://backend.malingreats.org/newsletter", requestOptions)
+        console.log(res.status)
+          if (res.status === 200) {
+            //   setLoading(false)
+              // handleClick()
+            }
+        }
         
-        const res = await fetch(`${url}/api/email`, requestOptions)
-        const data = await res.json()
-        console.log("EMAIL DATA", data)
-        setEmail(data[0].email)
       }
+
     
-      useEffect(()=> {
-        getEmail()
-        getPhone()
-      }, [])
 
   return (
     <Box sx={{ flexGrow: 1, backgroundColor: '#FFF', paddingTop: '30px', marginTop: '35px'}}>
@@ -135,17 +140,17 @@ export default function Footer({url}) {
                 <Grid item xs={12} sm={6} md={6}>
                     <h3 className={classes.title} >Company</h3>
                     <Box sx={{marginTop: {md:'45px'}}}>
-                    <h5 className={classes.list} onClick={() => {navigate("/services")}}>About Us</h5>
-                    <h5 className={classes.list} onClick={() => {navigate("/services")}}>Get In Touch</h5>
-                    <h5 className={classes.list} onClick={() => {navigate("/services")}}>Blog</h5>
+                    <h5 className={classes.list} onClick={() => {navigate("/about")}}>About Us</h5>
+                    <h5 className={classes.list} onClick={() => {navigate("/contact")}}>Get In Touch</h5>
+                    <h5 className={classes.list} onClick={() => {navigate("/blog")}}>Blog</h5>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
                     <h3 className={classes.title} >What We Offer</h3>
                     <Box sx={{marginTop: {md:'45px'}}}>
-                    <h5 className={classes.list} onClick={() => {navigate("/services")}}>Blockchain</h5>
-                    <h5 className={classes.list} onClick={() => {navigate("/services")}}>Custom Software</h5>
-                    <h5 className={classes.list} onClick={() => {navigate("/services")}}>Enterprise Systems</h5>
+                    <h5 className={classes.list} onClick={() => {navigate("/blockchain")}}>Blockchain</h5>
+                    <h5 className={classes.list} onClick={() => {navigate("/customDev")}}>Custom Software</h5>
+                    <h5 className={classes.list} onClick={() => {navigate("/erp")}}>Enterprise Systems</h5>
                     </Box>
                 </Grid>
             </Grid>
@@ -160,7 +165,7 @@ export default function Footer({url}) {
             }}
             noValidate
             autoComplete="off"
-            // onSubmit={onSubmit} 
+            onSubmit={onSubmit} 
             action="#"
             style={{
               display: 'flex',
@@ -171,7 +176,7 @@ export default function Footer({url}) {
             <Stack spacing={0} direction="row" alignItems="center">
                 <TextField
                 name="email"
-                // value={values.email}
+                value={values.email}
                 label=" Enter Email"
                 id="standard-basic"
                 variant="standard"

@@ -47,7 +47,7 @@ const FAQSection = () => {
                 We got you.
             </h2>
             <h5 className={classes.text}>
-            Here are some things you may need to know! Can’t find what you’re looking for? No worries! Contact our sales team: sales@malingreatssmartsystems.co.zw for answers to any questions.
+            Here are some things you may need to know! Can’t find what you’re looking for? No worries! Contact our sales team: sales@malingreatssmartsystems.co.zw <br/> whatsapp@+263 77 775 7603 <br/> for answers to any questions.
             </h5>
         </Grid>
         <Grid item xs={12} sm={12} md={6} className={classes.grid} >

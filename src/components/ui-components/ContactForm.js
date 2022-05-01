@@ -128,30 +128,29 @@ export default function ContactForm({url}) {
 
 const onSubmit = async(e) => {
   e.preventDefault()
-  setLoading(true)
+  if(values.name != '' && values.email != '' && values.phone != '' && values.message != '') {
+    setLoading(true)
 
-  var formdata = new FormData();
-  formdata.append("fullName", values.name);
-  formdata.append("message", values.message);
-  formdata.append("phoneNumber", values.phone);
-  formdata.append("email", values.email);
-  formdata.append("companyName", values.company);
+    var formdata = new FormData();
+    formdata.append("fullName", values.name);
+    formdata.append("message", values.message);
+    formdata.append("phoneNumber", values.phone);
+    formdata.append("email", values.email);
+    formdata.append("companyName", values.company);
 
-  var requestOptions = {
-    method: 'POST',
-    body: formdata,
-    redirect: 'follow'
-  };
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+    };
 
-  const res = await fetch('https://backend.malingreats.org/contact-email', requestOptions)
-  console.log(res)
-  if (res.status === 200) {
-    setLoading(false)
-    // handleClick()
+    const res = await fetch('https://backend.malingreats.org/contact-email', requestOptions)
+    console.log(res)
+    if (res.status === 200) {
+      setLoading(false)
+      // handleClick()
+    }
   }
-
-  
-  
 }
 
 

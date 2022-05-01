@@ -110,7 +110,7 @@ const BasicSolution = () => {
                 </Grid>
             </Grid>
 
-            <Button variant='contained'
+            {/* <Button variant='contained'
             // className={classes.button}
             sx={{
             display: 'flex',
@@ -128,7 +128,7 @@ const BasicSolution = () => {
         }}
             >
                 Build Your Solution
-            </Button>
+            </Button> */}
     </Box>
   )
 }

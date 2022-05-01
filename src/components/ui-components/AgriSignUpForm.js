@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '38px',
             lineHeight: '55px',
             color: '#FFF',
-            marginBottom: '25px',
+            margin: '25px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -120,6 +120,7 @@ export default function AgriSignUpForm({url, snackBarState}) {
 
 const onSubmit = async(e) => {
   e.preventDefault()
+  if(values.name != '' && values.email != '') {
   setLoading(true)
 
   var formdata = new FormData();
@@ -132,12 +133,14 @@ const onSubmit = async(e) => {
     redirect: 'follow'
   };
 
-  const res = await fetch("https://backend.malingreats.org/agri-signup", requestOptions)
+  const res = await fetch("https://backend.malingreats.org/agric-signup", requestOptions)
+  // const res = await fetch("http://localhost:8000/agric-signup", requestOptions)
   console.log(res.status)
     if (res.status === 200) {
         setLoading(false)
         // handleClick()
       }
+  }
 }
 
 

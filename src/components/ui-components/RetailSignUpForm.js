@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '38px',
             lineHeight: '55px',
             color: '#FFF',
-            marginBottom: '25px',
+            margin: '25px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -120,23 +120,25 @@ export default function RetailSignUpForm({url, snackBarState}) {
 
 const onSubmit = async(e) => {
   e.preventDefault()
-  setLoading(true)
-    
-  var formdata = new FormData();
-  formdata.append("fullName", values.name);
-  formdata.append("email", values.email);
+  if(values.name !== '' && values.email !== '') {
+    setLoading(true)
+      
+    var formdata = new FormData();
+    formdata.append("fullName", values.name);
+    formdata.append("email", values.email);
 
-  var requestOptions = {
-    method: 'POST',
-    body: formdata,
-    redirect: 'follow'
-  };
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+    };
 
-  const res = await fetch("https://backend.malingreats.org/retail-signup", requestOptions)
-  console.log(res.status)
-    if (res.status === 200) {
-        setLoading(false)
-        // handleClick()
+    const res = await fetch("https://backend.malingreats.org/retail-signup", requestOptions)
+    console.log(res.status)
+      if (res.status === 200) {
+          setLoading(false)
+          // handleClick()
+        }
       }
 }
 

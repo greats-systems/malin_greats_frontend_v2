@@ -91,6 +91,7 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translate(-50%, -50%)',
         width: '60%',
         backgroundColor: '#143B65',
+        borderRadius: '10px',
         // border: '2px solid #000',
         boxShadow: 24,
         p: 4,
@@ -116,7 +117,7 @@ const AgricultureIndustry = () => {
         className={classes.img}
         />
         <Box>
-            <h2 className={classes.heading}>Education</h2>
+            <h2 className={classes.heading}>Smart Education</h2>
             <h5 className={classes.body}>An ERP software for educational institutes and schools. Schools of any size can manage people, classes and share resources through a built in interactive portal.</h5>
             <Box >
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Instructors, Programs and Courses</h6>
