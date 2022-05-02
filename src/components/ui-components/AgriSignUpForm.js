@@ -133,7 +133,7 @@ const onSubmit = async(e) => {
     redirect: 'follow'
   };
 
-  const res = await fetch("https://backend.malingreats.org/agric-signup", requestOptions)
+  const res = await fetch("https://backend.malingreatssmartsystems.co.zw/api/agric-signup", requestOptions)
   // const res = await fetch("http://localhost:8000/agric-signup", requestOptions)
   console.log(res.status)
     if (res.status === 200) {

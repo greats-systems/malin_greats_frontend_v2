@@ -106,7 +106,7 @@ export default function Footer({url}) {
           redirect: 'follow'
         };
       
-        const res = await fetch("https://backend.malingreats.org/newsletter", requestOptions)
+        const res = await fetch("https://backend.malingreatssmartsystems.co.zw/api/newsletter", requestOptions)
         console.log(res.status)
           if (res.status === 200) {
             //   setLoading(false)

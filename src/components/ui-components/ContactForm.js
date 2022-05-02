@@ -144,7 +144,7 @@ const onSubmit = async(e) => {
       redirect: 'follow'
     };
 
-    const res = await fetch('https://backend.malingreats.org/contact-email', requestOptions)
+    const res = await fetch('https://backend.malingreatssmartsystems.co.zw/api/contact-email', requestOptions)
     console.log(res)
     if (res.status === 200) {
       setLoading(false)

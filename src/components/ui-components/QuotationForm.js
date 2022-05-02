@@ -135,7 +135,7 @@ const onSubmit = async(e) => {
   };
 
 //   const res = await fetch("http://localhost:8000/quotation", requestOptions)
-  const res = await fetch("https://backend.malingreats.org/quotation", requestOptions)
+  const res = await fetch("https://backend.malingreatssmartsystems.co.zw/api/quotation", requestOptions)
   console.log(res.status)
     if (res.status === 200) {
         setLoading(false)

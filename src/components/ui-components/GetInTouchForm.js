@@ -112,7 +112,7 @@ const onSubmit = async(e) => {
       redirect: 'follow'
     };
 
-    const res = await fetch("https://backend.malingreats.org/enquiry-email", requestOptions)
+    const res = await fetch("https://backend.malingreatssmartsystems.co.zw/api/enquiry-email", requestOptions)
     console.log(res.status)
       if (res.status === 200) {
           setLoading(false)
