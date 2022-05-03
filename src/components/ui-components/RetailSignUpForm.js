@@ -6,19 +6,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 import { Container } from '@mui/material';
-
-
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
-
-// import loader from '../../assets/images/loader.svg'
-
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
-
-
+import useAuth from '../../hooks/useAuth';
 
 
 const initialValues = {
@@ -87,24 +75,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function RetailSignUpForm({url, snackBarState}) {
-
-    const [snackBar, setSnackBar] = useState('Nothing')
-    const [open, setOpen] = useState(false);
+  const { handleClick } = useAuth();
     const [loading, setLoading] = useState(false);
   
-    const handleClick = () => {
-      setOpen(true);
-    };
-
-
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setOpen(false);
-    };
     const classes = useStyles();
 
 
@@ -138,7 +111,7 @@ const onSubmit = async(e) => {
     console.log(res.status)
       if (res.status === 200) {
           setLoading(false)
-          // handleClick()
+          handleClick()
         }
       }
 }
@@ -262,11 +235,7 @@ const onSubmit = async(e) => {
             </div>
         </Box>
     </Container>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Message Sent, You Will Be Replied Shortly
-        </Alert>
-      </Snackbar>
+
     </Box>
   );
 }

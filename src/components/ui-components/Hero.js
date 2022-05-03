@@ -22,7 +22,14 @@ const useStyles = makeStyles((theme) => ({
             marginLeft:'0px',
             marginTop: '15px',
 
-        }
+        },
+        [theme.breakpoints.down('md')]: {
+            // lineHeight: '30px',
+            marginTop: '5px',
+            marginLeft: '0px',
+            width: '85%'
+
+              },
     },
     heading1: {
         width: '145%',
@@ -40,6 +47,12 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: '30px',
         fontSize: '30px',
           },
+          [theme.breakpoints.down('md')]: {
+            lineHeight: '55px',
+            fontSize: '45px',
+            width: '80%'
+
+              },
     },
     body: {
         width: '150%',
@@ -59,6 +72,12 @@ const useStyles = makeStyles((theme) => ({
             width: '90%'
 
               },
+              [theme.breakpoints.down('md')]: {
+                // lineHeight: '30px',
+                fontSize: '18px',
+                width: '80%'
+    
+                  },
     },
     buttonBox: {
         width: '125%',

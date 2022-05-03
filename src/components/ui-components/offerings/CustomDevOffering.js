@@ -52,6 +52,12 @@ const useStyles = makeStyles((theme) => ({
     },
     img: {
         width: '100%',
+        [theme.breakpoints.down('sm')]: {
+            width: '80%',
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '80%',
+        }
     },
     flexThis: {
         display: 'flex',
@@ -61,6 +67,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             flexDirection: 'column-reverse',
 
+        },
+        [theme.breakpoints.down('md')]: {
+            flexDirection: 'column-reverse',
         }
     },
     textBox: {
@@ -69,7 +78,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             width: '100%',
             marginLeft: '5px'
-
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '100%',
+            marginLeft: '5px'
         }
     }
     

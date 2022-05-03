@@ -6,28 +6,12 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 import { Container } from '@mui/material';
-
-
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
-
-// import loader from '../../assets/images/loader.svg'
-
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
-
-
-
+import useAuth from '../../hooks/useAuth';
 
 const initialValues = {
   name: '',
   email: '',
 }
-
-
-
 
 const useStyles = makeStyles((theme) => ({
     box: {
@@ -68,21 +52,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ContactForm({url}) {
-
+  const { runGetInTouchSnackbar} = useAuth();
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
-  
-    const handleClick = () => {
-      setOpen(true);
-    };
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setOpen(false);
-    };
     const classes = useStyles();
 
 
@@ -99,6 +71,7 @@ export default function ContactForm({url}) {
 
 const onSubmit = async(e) => {
   e.preventDefault()
+  
   if(values.name != '' && values.email != '') {
     setLoading(true)
 
@@ -116,7 +89,7 @@ const onSubmit = async(e) => {
     console.log(res.status)
       if (res.status === 200) {
           setLoading(false)
-          // handleClick()
+          runGetInTouchSnackbar()
         }
       }
 }

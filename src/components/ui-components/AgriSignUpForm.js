@@ -13,6 +13,8 @@ import MuiAlert from '@mui/material/Alert';
 
 // import loader from '../../assets/images/loader.svg'
 
+import useAuth from '../../hooks/useAuth';
+
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -88,23 +90,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AgriSignUpForm({url, snackBarState}) {
 
+  const { handleClick } = useAuth();
+
     const [snackBar, setSnackBar] = useState('Nothing')
-    const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
   
-    const handleClick = () => {
-      setOpen(true);
-    };
 
-
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setOpen(false);
-    };
     const classes = useStyles();
 
 
@@ -121,6 +112,7 @@ export default function AgriSignUpForm({url, snackBarState}) {
 
 const onSubmit = async(e) => {
   e.preventDefault()
+
   if(values.name != '' && values.email != '') {
   setLoading(true)
 
@@ -139,7 +131,7 @@ const onSubmit = async(e) => {
   console.log(res.status)
     if (res.status === 200) {
         setLoading(false)
-        // handleClick()
+        handleClick()
       }
   }
 }
@@ -263,11 +255,11 @@ const onSubmit = async(e) => {
             </div>
         </Box>
     </Container>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      {/* <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
           Message Sent, You Will Be Replied Shortly
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
     </Box>
   );
 }

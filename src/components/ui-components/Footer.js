@@ -21,6 +21,20 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         // marginTop: '24px',
     },
+    subscribeTitle: {
+        fontFamily: 'Manrope',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        // margin: '0px',
+        fontSize: '20px',
+        lineHeight: '25px',
+        
+        color: '#181433',
+        [theme.breakpoints.down('md')]: {
+            textAlign: 'center',
+            marginTop: '45px'    
+        },
+    },
     title: {
         fontFamily: 'Manrope',
         fontStyle: 'normal',
@@ -88,9 +102,7 @@ export default function Footer({url}) {
           ...values,
           [name]: value,
       })
-
     }
-
 
     const onSubmit = async(e) => {
         e.preventDefault()
@@ -112,8 +124,7 @@ export default function Footer({url}) {
             //   setLoading(false)
               // handleClick()
             }
-        }
-        
+        } 
       }
 
     
@@ -156,7 +167,7 @@ export default function Footer({url}) {
             </Grid>
         </Grid>
         <Grid item xs={12} md={4}>
-        <h3 className={classes.title}>Subscribe to our blog</h3>
+        <h3 className={classes.subscribeTitle}>Subscribe to our blog</h3>
         <Box sx={{marginTop: {md:'45px'}}}>
         <Box
             component="form"
@@ -203,15 +214,14 @@ export default function Footer({url}) {
             borderRadius: '5px',color: '#000',
             textTransform: 'none'
         }}        
-            >
-                Subscribe
+        >
+        Subscribe
             </Button> 
             </Stack>
         </Box>
         </Box>
         </Grid>
       </Grid>
-      
       
       </Container>
       <Box sx={{backgroundColor: '#FFF', paddingTop: '15px', borderTop: '1px solid #E5E5E5'}}>
@@ -229,7 +239,6 @@ export default function Footer({url}) {
         {/* <Grid item xs={12} md={6}>
             <h4 className={classes.lowerText} style={{textAlign: 'center',}}>Powered By <span style={{color: '#FF6D1C'}}>Malin Greats Smart Systems</span></h4>
         </Grid> */}
-        
         </Grid>
         </Container>
         </Box>
