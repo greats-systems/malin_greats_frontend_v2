@@ -20,7 +20,7 @@ text: {
       fontWeight: '600',
     fontSize: '35px',  
     lineHeight: '40px',
-    marginTop: '75px',
+    marginTop: '200px',
     }
 
 }

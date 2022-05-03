@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
       // border: '2px solid #000',
       boxShadow: 24,
       p: 4,
+      [theme.breakpoints.down('sm')]: {
+        width: '100%',
+        display: 'block'
+      }
   }
   
 }))

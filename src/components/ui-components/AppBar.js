@@ -264,6 +264,8 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import SettingsIcon from '@mui/icons-material/Settings';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+
 // style constant
 const useStyles = makeStyles((theme) => ({
     header: {
@@ -431,7 +433,7 @@ const ResponsiveAppBar = () => {
                                             navigate("/")
                                         }}>
                                             <ListItemIcon>
-                                                <HomeIcon sx={{color: '#007BFF'}}/>
+                                                <HomeIcon sx={{color: '#143B65'}}/>
                                             </ListItemIcon>
                                             <ListItemText primary="Home" />
                                         </ListItemButton>
@@ -440,7 +442,7 @@ const ResponsiveAppBar = () => {
                                             navigate("/erp")
                                         }}>
                                             <ListItemIcon>
-                                                <SettingsIcon sx={{color: '#007BFF'}}/>
+                                                <AccountBalanceIcon sx={{color: '#143B65'}}/>
                                             </ListItemIcon>
                                             <ListItemText primary="Enterprise Systems" />
                                         </ListItemButton>
@@ -449,7 +451,7 @@ const ResponsiveAppBar = () => {
                                             navigate("/customDev")
                                         }}>
                                             <ListItemIcon>
-                                                <PeopleAltIcon sx={{color: '#007BFF'}}/>
+                                                <SettingsIcon sx={{color: '#143B65'}}/>
                                             </ListItemIcon>
                                             <ListItemText primary="Custom Development" />
                                         </ListItemButton>
@@ -458,7 +460,7 @@ const ResponsiveAppBar = () => {
                                             navigate("/about")
                                         }}>
                                             <ListItemIcon>
-                                                <SettingsIcon sx={{color: '#007BFF'}}/>
+                                                <PeopleAltIcon sx={{color: '#143B65'}}/>
                                             </ListItemIcon>
                                             <ListItemText primary="About" />
                                         </ListItemButton>
@@ -467,7 +469,7 @@ const ResponsiveAppBar = () => {
                                             navigate("/contact")
                                         }}>
                                             <ListItemIcon>
-                                                <LocalPhoneIcon sx={{color: '#007BFF'}}/>
+                                                <LocalPhoneIcon sx={{color: '#143B65'}}/>
                                             </ListItemIcon>
                                             <ListItemText primary="Contact US" />
                                         </ListItemButton>
@@ -481,7 +483,7 @@ const ResponsiveAppBar = () => {
                                             bgcolor: '#143B65',
                                             borderRadius: '10px',
                                             textTransform: 'none',
-                                            marginLeft: '75px'
+                                            // marginLeft: '75px'
                                 
                                         }}
                                             onClick={() => navigate('/contact')}

@@ -26,7 +26,7 @@ const Home = () => {
     <BlockchainOffering/>
     <WhyUsHeading/>
     <WhyUs/>
-    <CustomArrows/>
+    {/* <CustomArrows/> */}
     <GetInTouch/>
     <Footer/>
     </>

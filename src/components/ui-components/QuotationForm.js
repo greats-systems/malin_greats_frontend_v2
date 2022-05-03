@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
             justifyContent: 'center',
             alignItems: 'center',
             [theme.breakpoints.down('sm')]: {
+              display: 'none',
             fontWeight: '600',
               fontSize: '35px',  
               lineHeight: '40px',

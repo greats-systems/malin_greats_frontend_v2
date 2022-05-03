@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     box: {
         backgroundColor: '#143B65',
         borderRadius: '20px',
-        padding: '30px',
+        padding: '20px',
         marginTop: '45px',
         [theme.breakpoints.down('sm')]: {
             marginTop: '5px',
@@ -58,8 +58,8 @@ const VisionMission = () => {
             </Grid>
             <Grid item xs={12} md={6}>
             <Box className={classes.box}>
-                <h1 className={classes.heading}>Vision</h1>
-                <p className={classes.body}>To be an energy portal of Africa's greatness through technology research, development and community growth.</p>
+                <h1 className={classes.heading}>Mission</h1>
+                <p className={classes.body}>To meet the everyday needs of grassroots communities through provision of smart, modern and sustainable technology solutions.</p>
                 </Box>
             </Grid>
         </Grid>

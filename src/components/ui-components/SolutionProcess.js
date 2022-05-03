@@ -80,7 +80,7 @@ const SolutionProcess = () => {
                         <h6 className={classes.text}> The finalized code is implemented and then deployed or delivered to the customers to be used. If the end user has any changes or if errors found, the development team works to correct them.</h6>
                     </Box>
                     <Box>
-                        <h2 className={classes.title}>Mainatenance</h2>
+                        <h2 className={classes.title}>Maintenance</h2>
                         <h6 className={classes.text}>Once the customers start using well-developed software, we work on updating it from time to time to maintain it’s standard and accomodate new requirements.</h6>
                     </Box>
                    

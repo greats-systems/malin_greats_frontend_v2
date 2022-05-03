@@ -30,7 +30,7 @@ const Erp = () => {
     {/* <BasicSolution/> */}
     <ErpPricing/>
     <Values/>
-    <CustomArrows/>
+    {/* <CustomArrows/> */}
     <FAQSection/>
     <GetInTouch/>
     <Footer/>

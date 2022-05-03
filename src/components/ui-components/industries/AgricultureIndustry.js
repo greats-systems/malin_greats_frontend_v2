@@ -48,8 +48,8 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '5px',
         [theme.breakpoints.down('sm')]: {
             fontWeight: '400',
-              fontSize: '22px',  
-              lineHeight: '20px',
+              fontSize: '20px',  
+              lineHeight: '25px',
               }
     },
     list: {
@@ -62,6 +62,8 @@ const useStyles = makeStyles((theme) => ({
         margin: '15px',
         [theme.breakpoints.down('sm')]: {
             fontWeight: '400',
+            lineHeight: '20px',
+            fontSize: '16px',
               }
     },
     dot: {
@@ -96,6 +98,10 @@ const useStyles = makeStyles((theme) => ({
         // border: '2px solid #000',
         boxShadow: 24,
         p: 4,
+        [theme.breakpoints.down('sm')]: {
+          width: '100%',
+          display: 'block'
+        }
     }
     
 }))

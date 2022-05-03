@@ -5,7 +5,7 @@ import { Container, Box, Grid, Button } from '@mui/material';
 
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
-import ContactHeader from '../../assets/contact-hero.png'
+import ContactHeader from '../../assets/contact-hero.svg'
 import ErpHeaderBg from '../../assets/erp-header-bg.svg'
 
 const useStyles = makeStyles((theme) => ({

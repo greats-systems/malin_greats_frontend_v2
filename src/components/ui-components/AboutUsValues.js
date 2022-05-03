@@ -80,7 +80,7 @@ const AboutUsValues = () => {
             <Grid item xs={12} md={9}>
                 <Box sx={{paddingLeft: {xs:'5px', lg:'95'}}}>
                     <h3 className={classes.heading}>Problem Solving</h3>
-                    <p className={classes.body}>We are always looking for solutions to specific problems they are faced by businesses and in communities.</p>
+                    <p className={classes.body}>We are always looking for solutions to specific problems that are faced by business communities.</p>
                 </Box>
             </Grid>
         </Grid>
@@ -93,7 +93,7 @@ const AboutUsValues = () => {
             <Grid item xs={12} md={9}>
                 <Box sx={{paddingLeft: {xs:'5px', lg:'95'}}}>
                     <h3 className={classes.heading}>Research</h3>
-                    <p className={classes.body}>To meet our customers needs we are always looking to learn about them and how we can use technology to better their lives.</p>
+                    <p className={classes.body}>To meet our customers needs we are always learning about them and how we can provide technology that can better their lives.</p>
                 </Box>
             </Grid>
         </Grid>
@@ -106,7 +106,7 @@ const AboutUsValues = () => {
             <Grid item xs={12} md={9}>
                 <Box sx={{paddingLeft: {xs:'5px', lg:'95'}}}>
                     <h3 className={classes.heading}>Innovation</h3>
-                    <p className={classes.body}>We encourage out of the box thinking to tackle the challenges faced by Africa.</p>
+                    <p className={classes.body}>We encourage out of the box thinking to tackle the challenges faced by Africa society</p>
                 </Box>
             </Grid>
         </Grid>

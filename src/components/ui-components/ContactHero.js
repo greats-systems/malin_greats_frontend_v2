@@ -5,7 +5,7 @@ import { Container, Box, Grid, Button } from '@mui/material';
 
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
-import ContactHeader from '../../assets/contact-hero.png'
+import ContactHeader from '../../assets/contact-hero.svg'
 import ErpHeaderBg from '../../assets/erp-header-bg.svg'
 
 const useStyles = makeStyles((theme) => ({
@@ -122,7 +122,7 @@ const ContactHero = () => {
             <h5 className={classes.body}>
             Provide us with your details and a member of our team will be in touch to schedule a consultation call.
             </h5>
-            <Button className={classes.CTABtn} 
+            {/* <Button className={classes.CTABtn} 
             variant="contained"
             sx={{
                 textDecoration:'none',
@@ -135,7 +135,7 @@ const ContactHero = () => {
             onClick={(()=> {navigate("/erp");})}
             >
                 Get Started
-            </Button>
+            </Button> */}
             </Box>
             
         </Grid>

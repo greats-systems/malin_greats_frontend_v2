@@ -98,6 +98,18 @@ const WhatWeOfferWeb = () => {
             </Box>
             <Button variant='contained'
             className={classes.button}
+            sx={{
+                marginTop: '20px',
+                fontFamily: 'Manrope',
+                fontWeight: '400',
+                fontSize: '14px',
+                lineHeight: '25px',
+                textAlign: 'center',
+                background: '#143B65',
+                color: '#FFF',
+                borderRadius: '10px',
+                width: '45%'
+            }}
             >
                 Work With Us
             </Button>

@@ -23,7 +23,7 @@ const CustomDev = () => {
     <WhatWeofferWeb/>
     <SolutionProcessHeading/>
     <SolutionProcess/>
-    <ProjectsIntro/>
+    {/* <ProjectsIntro/> */}
 
     <GetInTouch/>
     <Footer/>

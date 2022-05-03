@@ -52,6 +52,25 @@ const useStyles = makeStyles((theme) => ({
     },
     img: {
         width: '100%',
+    },
+    flexThis: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: '75px',
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: 'column-reverse',
+
+        }
+    },
+    textBox: {
+        width: '75%',
+        marginLeft: '75px',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            marginLeft: '5px'
+
+        }
     }
     
 }))
@@ -63,17 +82,19 @@ const ErpOffering = () => {
     return (
     <Box sx={{ backgroundImage: `url(${IndustryBg})`}}>
     <Container>
-        <Grid container spacing={3}  >
-        <Grid item xs={12} sm={12} md={6}>
+        <Box className={classes.flexThis}>
+        {/* <Grid container spacing={3}  > */}
+        {/* <Grid item xs={12} sm={12} md={6}> */}
+        <Box>
         <img 
         src={CustomDevImg} 
         alt="Malin Greats Logo" 
         className={classes.img}
         />
-        
-        </Grid>
-        <Grid item xs={12} sm={12} md={6}>
-        <Box>
+        </Box>
+        {/* </Grid> */}
+        {/* <Grid item xs={12} sm={12} md={6}> */}
+        <Box className={classes.textBox}>
             <h2 className={classes.heading}>Custom Software Development</h2>
             <h5 className={classes.body}>We develop tailored web and mobile based software solutions for starts ups, SMEs and large organisations. Whether you are an existing business or are looking to develop and launch a software product get in touch and we’ll help you turn an idea into a reality.</h5>
             <Button variant='contained'
@@ -92,8 +113,9 @@ const ErpOffering = () => {
                 Learn More
             </Button>
         </Box>
-        </Grid>
-        </Grid>
+        {/* </Grid> */}
+        {/* </Grid> */}
+        </Box>
     </Container>
     </Box>
   )
