@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-export default function AgriSignUpForm({url, snackBarState}) {
+export default function AgriSignUpForm({closeModal}) {
 
   const { handleClick } = useAuth();
 
@@ -131,6 +131,7 @@ const onSubmit = async(e) => {
   console.log(res.status)
     if (res.status === 200) {
         setLoading(false)
+        closeModal()
         handleClick()
       }
   }

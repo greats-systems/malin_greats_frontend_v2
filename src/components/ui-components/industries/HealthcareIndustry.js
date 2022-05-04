@@ -5,12 +5,12 @@ import { makeStyles } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
+import Healthcare from '../../../assets/healthcare.svg'
 import IndustryBg from '../../../assets/industry-solution-bg.svg'
-import IndustryAgric from '../../../assets/industry-solution-agric.png'
 import ErpHeaderBg from '../../../assets/erp-header-bg.svg'
 
 
-import AgriSignUpForm from '../../ui-components/AgriSignUpForm'
+import HealthcareSignUpForm from '../../ui-components/HealthcareSignUpForm'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Manrope',
         fontStyle: 'normal',
         fontWeight: '500',
-        fontSize: '18px',
+        fontSize: '17px',
         lineHeight: '5px',
         color: '#000',
         margin: '15px',
@@ -83,6 +83,7 @@ const useStyles = makeStyles((theme) => ({
         width: '45%'
     },
     img: {
+        width: '60%',
         [theme.breakpoints.down('sm')]: {
             width: '100%'
           }
@@ -102,12 +103,15 @@ const useStyles = makeStyles((theme) => ({
           width: '100%',
           display: 'block'
         }
+    },
+    textBox: {
+      marginTop: '-45px'
     }
     
 }))
 
 
-const AgricultureIndustry = ({snackBarState}) => {
+const HealthcareIndustry = ({snackBarState}) => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -117,18 +121,22 @@ const AgricultureIndustry = ({snackBarState}) => {
     <Box sx={{ backgroundImage: `url(${IndustryBg})`}}>
     <Container>
         <Box className={classes.div}  >
-        
-        <Box>
+        <img 
+        src={Healthcare} 
+        alt="Malin Greats Logo" 
+        className={classes.img}
+        />
+        <Box className={classes.textBox}>
             <h2 className={classes.heading}>Smart Healthcare</h2>
-            <h5 className={classes.body}>Explore Farming Agribusiness Resource Management App (SMART FARMA)- a comprehensive agriculture ERP solution for modern farmers </h5>
+            <h5 className={classes.body}>An ERP solution for hospitals, clinics, and dispensaries that will help you maintain all critical data under one roof. </h5>
             <Box >
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Keep Track of Assets</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Employees</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Capture Data and Plan Ahead</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Crops and Animals</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Record Orders and Create Invoices</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Keep an Accounting Record</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Multiple Farms</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Patient Repositories,History & Appointments</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Practitioner Data including Payroll</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Medicines And Equipment Management</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Map Out Clinical Procedures</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Document Storage</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Built-in Email Feature</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Billing and Pricing</h6>
             </Box>
             <Button variant='contained'
             // className={classes.button}
@@ -149,11 +157,7 @@ const AgricultureIndustry = ({snackBarState}) => {
                 Free Sign Up
             </Button>
         </Box>
-        <img 
-        src={IndustryAgric} 
-        alt="Malin Greats Logo" 
-        className={classes.img}
-        />
+       
         </Box>
     <Modal
         open={open}
@@ -162,7 +166,7 @@ const AgricultureIndustry = ({snackBarState}) => {
         aria-describedby="modal-modal-description"
       >
         <Box className={classes.modal} sx={{ backgroundImage: `url(${ErpHeaderBg})`}}>
-          <AgriSignUpForm snackBarState={snackBarState}/>
+          <HealthcareSignUpForm closeModal={handleClose}/>
         </Box>
       </Modal>
     </Container>
@@ -172,4 +176,4 @@ const AgricultureIndustry = ({snackBarState}) => {
   )
 }
 
-export default AgricultureIndustry
+export default HealthcareIndustry

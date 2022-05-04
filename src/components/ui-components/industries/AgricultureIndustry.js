@@ -161,7 +161,7 @@ const AgricultureIndustry = ({snackBarState}) => {
         aria-describedby="modal-modal-description"
       >
         <Box className={classes.modal} sx={{ backgroundImage: `url(${ErpHeaderBg})`}}>
-          <AgriSignUpForm snackBarState={snackBarState}/>
+          <AgriSignUpForm closeModal={handleClose}/>
         </Box>
       </Modal>
     </Container>

@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-export default function EducationSignUpForm({url, snackBarState}) {
+export default function EducationSignUpForm({closeModal}) {
     const [loading, setLoading] = useState(false);
     const { handleClick } = useAuth();
     const classes = useStyles();
@@ -109,6 +109,7 @@ const onSubmit = async(e) => {
     console.log(res.status)
       if (res.status === 200) {
           setLoading(false)
+          closeModal()
           handleClick()
         }
       }

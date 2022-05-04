@@ -5,7 +5,9 @@ import IndustriesHeading from '../ui-components/Headings/IndustryHeading'
 import CustomSolutionsHeading from '../ui-components/Headings/CustomSolutionsHeading'
 import AgricultureIndustry from '../ui-components/industries/AgricultureIndustry'
 import EducationIndustry from '../ui-components/industries/EducationIndustry'
+import HealthcareIndustry from '../ui-components/industries/HealthcareIndustry'
 import RetailIndustry from '../ui-components/industries/RetailIndustry'
+import ManufacturingIndustry from '../ui-components/industries/ManufacturingIndustry'
 import Values from '../ui-components/Values'
 import CustomArrows from '../ui-components/CustomArrows'
 import ErpPricing from '../ui-components/ErpPricing'
@@ -49,6 +51,8 @@ const Erp = () => {
     <AgricultureIndustry/>
     <RetailIndustry/>
     <EducationIndustry/>
+    <ManufacturingIndustry/>
+    <HealthcareIndustry/>
     <CustomSolutionsHeading/>
     {/* <BasicSolution/> */}
     <ErpPricing/>
@@ -68,7 +72,7 @@ const Erp = () => {
            <Alert onClose={handleClose} severity="success" sx={{ width: '100%', color: '#143B65', backgroundColor: '#60FF5C' }}>
           You have successfully signed up for Smart Systems
           Check your inbox for a confirmation email
-          In about 10 to 15 min
+          In about 5 min
         </Alert>
         </Snackbar>
 

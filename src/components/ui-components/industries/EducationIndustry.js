@@ -161,7 +161,7 @@ const AgricultureIndustry = () => {
         aria-describedby="modal-modal-description"
       >
         <Box className={classes.modal} >
-          <EducationSignUpForm/>
+          <EducationSignUpForm closeModal={handleClose}/>
         </Box>
       </Modal>
     </Container>

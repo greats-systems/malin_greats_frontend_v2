@@ -1,4 +1,4 @@
-import { ClassNames } from '@emotion/react'
+import { useNavigate } from 'react-router-dom'
 import { Box, Container, Grid, Stack, Button } from '@mui/material'
 import React from 'react'
 
@@ -49,6 +49,7 @@ box: {
 }))
 
 const SolutionProcess = () => {
+    let navigate = useNavigate()
     const classes = useStyles();
     return (
     <Box sx={{backgroundColor: '#143B65', padding: {xs: '5px', md: '45px'}}}>
@@ -90,6 +91,7 @@ const SolutionProcess = () => {
 
             <Button 
             variant="contained"
+            onClick={() => navigate('/contact')}
             sx={{
                 backgroundColor: '#60FF5C',
                 borderRadius: '10px',

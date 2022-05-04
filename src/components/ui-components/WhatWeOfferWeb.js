@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { Box, Button, Container } from '@mui/material'
 import React from 'react'
 import HdrWeakIcon from '@mui/icons-material/HdrWeak';
@@ -73,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const WhatWeOfferWeb = () => {
+    let navigate = useNavigate()
     const classes = useStyles();
 
     return (
@@ -97,6 +99,7 @@ const WhatWeOfferWeb = () => {
                 <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Redesign</h6>
             </Box>
             <Button variant='contained'
+            onClick={() => navigate('/contact')}
             className={classes.button}
             sx={{
                 marginTop: '20px',

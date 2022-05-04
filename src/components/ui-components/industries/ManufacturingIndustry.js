@@ -6,11 +6,11 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 import IndustryBg from '../../../assets/industry-solution-bg.svg'
-import IndustryAgric from '../../../assets/industry-solution-agric.png'
+import Manufacturing from '../../../assets/manufacturing.svg'
 import ErpHeaderBg from '../../../assets/erp-header-bg.svg'
 
 
-import AgriSignUpForm from '../../ui-components/AgriSignUpForm'
+import ManufacturingSignUpForm from '../../ui-components/ManufacturingSignUpForm'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const AgricultureIndustry = ({snackBarState}) => {
+const ManufacturingIndustry = ({snackBarState}) => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -117,22 +117,18 @@ const AgricultureIndustry = ({snackBarState}) => {
     <Box sx={{ backgroundImage: `url(${IndustryBg})`}}>
     <Container>
         <Box className={classes.div}  >
-        <img 
-        src={IndustryAgric} 
-        alt="Malin Greats Logo" 
-        className={classes.img}
-        />
+        
         <Box>
-            <h2 className={classes.heading}>Smart Agriculture</h2>
-            <h5 className={classes.body}>Explore Farming Agribusiness Resource Management App (SMART FARMA)- a comprehensive agriculture ERP solution for modern farmers </h5>
+            <h2 className={classes.heading}>Smart Manufacturing</h2>
+            <h5 className={classes.body}>A cloud based ERP software for manufacturing companies that simplifies the production cycle, helps track material consumption and more!</h5>
             <Box >
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Keep Track of Assets</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Employees</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Capture Data and Plan Ahead</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Crops and Animals</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Record Orders and Create Invoices</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Keep an Accounting Record</h6>
-                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Manage Multiple Farms</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Material Resource Planning</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Capacity planning</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Batched inventory</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Shop floor management</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Stock Management</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Track Suppliers' Labour and operations</h6>
+                <h6 className={classes.list}><HdrWeakIcon className={classes.dot}/> Bill of material (BOM)</h6>
             </Box>
             <Button variant='contained'
             // className={classes.button}
@@ -153,6 +149,11 @@ const AgricultureIndustry = ({snackBarState}) => {
                 Free Sign Up
             </Button>
         </Box>
+        <img 
+        src={Manufacturing} 
+        alt="Malin Greats Logo" 
+        className={classes.img}
+        />
         </Box>
     <Modal
         open={open}
@@ -161,7 +162,7 @@ const AgricultureIndustry = ({snackBarState}) => {
         aria-describedby="modal-modal-description"
       >
         <Box className={classes.modal} sx={{ backgroundImage: `url(${ErpHeaderBg})`}}>
-          <AgriSignUpForm snackBarState={snackBarState}/>
+          <ManufacturingSignUpForm closeModal={handleClose}/>
         </Box>
       </Modal>
     </Container>
@@ -171,4 +172,4 @@ const AgricultureIndustry = ({snackBarState}) => {
   )
 }
 
-export default AgricultureIndustry
+export default ManufacturingIndustry

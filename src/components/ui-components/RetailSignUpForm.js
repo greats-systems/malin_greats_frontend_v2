@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-export default function RetailSignUpForm({url, snackBarState}) {
+export default function RetailSignUpForm({closeModal}) {
   const { handleClick } = useAuth();
     const [loading, setLoading] = useState(false);
   
@@ -111,6 +111,7 @@ const onSubmit = async(e) => {
     console.log(res.status)
       if (res.status === 200) {
           setLoading(false)
+          closeModal()
           handleClick()
         }
       }
