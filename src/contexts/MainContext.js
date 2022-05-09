@@ -8,6 +8,7 @@ export default MainContext;
 export const MainProvider = ({children}) => { 
 
 	const [state, setState] = useState(false);
+	// const [state, setState] = useState(false);
 	const [getInTouchState, setGetInTouchState] = useState(false);
 
     const [contextTest, setContextTest] = useState('This Works')

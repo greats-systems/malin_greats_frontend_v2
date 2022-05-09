@@ -72,7 +72,6 @@ const Erp = () => {
            <Alert onClose={handleClose} severity="success" sx={{ width: '100%', color: '#143B65', backgroundColor: '#60FF5C' }}>
           You have successfully signed up for Smart Systems
           Check your inbox for a confirmation email
-          In about 5 min
         </Alert>
         </Snackbar>
 

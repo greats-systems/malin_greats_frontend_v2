@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -10,15 +10,7 @@ import Button from '@mui/material/Button';
 import { Container } from '@mui/material';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
-
-
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
-
+import useAuth from '../../hooks/useAuth';
 
 
 
@@ -87,21 +79,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ContactForm({url}) {
+  const { handleClick } = useAuth();
 
-    const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
   
-    const handleClick = () => {
-      setOpen(true);
-    };
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setOpen(false);
-    };
+
     const classes = useStyles();
 
     const [interest, setInterest] = useState('');
@@ -148,7 +130,7 @@ const onSubmit = async(e) => {
     console.log(res)
     if (res.status === 200) {
       setLoading(false)
-      // handleClick()
+      handleClick()
     }
   }
 }
@@ -285,11 +267,7 @@ const onSubmit = async(e) => {
             </div>
         </Box>
       </Container>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Message Sent, You Will Be Replied Shortly
-        </Alert>
-      </Snackbar>
+
     </Box>
   );
 }

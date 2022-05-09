@@ -119,6 +119,7 @@ const onSubmit = async(e) => {
   var formdata = new FormData();
   formdata.append("fullName", values.name);
   formdata.append("email", values.email);
+  formdata.append("isActive", "True");
 
   var requestOptions = {
     method: 'POST',

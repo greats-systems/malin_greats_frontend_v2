@@ -76,9 +76,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RetailSignUpForm({closeModal}) {
   const { handleClick } = useAuth();
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   
-    const classes = useStyles();
+  const classes = useStyles();
 
 
   const [values, setValues] = useState(initialValues)
@@ -100,6 +100,7 @@ const onSubmit = async(e) => {
     var formdata = new FormData();
     formdata.append("fullName", values.name);
     formdata.append("email", values.email);
+    formdata.append("isActive", "True");
 
     var requestOptions = {
       method: 'POST',
